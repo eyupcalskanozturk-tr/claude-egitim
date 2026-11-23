@@ -16,6 +16,20 @@ const BASLIKLAR = [
   'İyi istemin formülü',
   'Hangisi daha iyi?',
   'B neden daha iyi?',
+  'Farkı kendin gör',
+  'Beğenmedin mi? Sohbete devam et 💬',
+  'Cevabı 2 kez düzelttir',
+  'Formülü tamamla ✍️',
+  'Mola ☕',
+  'Claude da yanılabilir',
+  'Hatayı bul 🔍',
+  "🚫 Claude'a asla yazma",
+  "Hangisini Claude'a yazabilirim?",
+  'Kızılay görevi 🚑',
+  'Sonuçlarımızı paylaşalım 🎤',
+  'Çıkış quizi 🏁',
+  'Bugün öğrendiklerimiz ✅',
+  'Teşekkürler! 🙌',
 ];
 
 test.beforeEach(async ({ page }) => {
@@ -32,10 +46,30 @@ test('sunum hatasız açılır, bütün görseller yüklenir', async ({ page }) 
   expect(hatalar).toEqual([]);
 });
 
-test('slayt başlıkları beklenen sırada', async ({ page }) => {
+test('tam 28 slayt, başlıklar beklenen sırada', async ({ page }) => {
   const basliklar = await page.evaluate(() =>
     [...document.querySelectorAll('.reveal .slides > section')].map((s) => s.querySelector('h1, h2').textContent.trim()));
-  expect(basliklar.slice(0, BASLIKLAR.length)).toEqual(BASLIKLAR);
+  expect(basliklar).toEqual(BASLIKLAR);
+});
+
+test('sadece 16, 17 ve 23 numaralı slaytlar atlanabilir olarak işaretli', async ({ page }) => {
+  const atlanabilir = await page.evaluate(() =>
+    [...document.querySelectorAll('.reveal .slides > section')]
+      .map((s, i) => ({ no: i + 1, not: s.querySelector('aside.notes').textContent.trim() }))
+      .filter((x) => x.not.startsWith('⏭ ATLANABİLİR')).map((x) => x.no));
+  expect(atlanabilir).toEqual([16, 17, 23]);
+});
+
+test('"siz yapın" slaytları 8, 15, 17 ve 24', async ({ page }) => {
+  const nolar = await page.evaluate(() =>
+    [...document.querySelectorAll('.reveal .slides > section')]
+      .map((s, i) => (s.classList.contains('siz-yapin') ? i + 1 : 0)).filter(Boolean));
+  expect(nolar).toEqual([8, 15, 17, 24]);
+});
+
+test('S tuşu konuşmacı görünümünü açar', async ({ page }) => {
+  const [pencere] = await Promise.all([page.waitForEvent('popup'), page.keyboard.press('s')]);
+  expect(pencere).toBeTruthy();
 });
 
 test('her slaytta boş olmayan konuşmacı notu var', async ({ page }) => {
