@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Örnek slaytlar (test)</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../ortak/vendor/reveal/reset.css">
+  <link rel="stylesheet" href="../ortak/vendor/reveal/reveal.css">
+  <link rel="stylesheet" href="../ortak/css/fontlar.css">
+  <link rel="stylesheet" href="../ortak/css/tema.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section id="kapak" class="kapak" data-state="kapak-ekrani">
+        <div class="kapak-ic">
+          <p class="ust-baslik">Örnek</p>
+          <h1>Kapak <span class="vurgu">başlığı</span></h1>
+        </div>
+      </section>
+      <section id="anlatim">
+        <h2>Anlatım başlığı</h2>
+        <ul><li>Bir</li><li>İki</li><li>Üç</li></ul>
+        <p class="not-kutusu">Not kutusu</p>
+      </section>
+      <section id="secmeli">
+        <h2>Soru</h2>
+        <div class="secmeli yatay">
+          <button class="sik">Yanlış şık</button>
+          <button class="sik" data-dogru>Doğru şık</button>
+          <button class="sik">Diğer şık</button>
+        </div>
+      </section>
+      <section id="bosluk">
+        <h2>Boşluk</h2>
+        <p>Claude bir yapay zeka <span class="bosluk" data-cevap="asistanıdır"></span>.</p>
+      </section>
+      <section id="karsilastirma">
+        <h2>Karşılaştırma</h2>
+        <div class="iki-sutun">
+          <div class="kutu kotu"><h3>A</h3><div class="istem">Kötü</div></div>
+          <div class="kutu iyi"><h3>B</h3><div class="istem">İyi</div></div>
+        </div>
+      </section>
+      <section id="adim">
+        <h2>Adım</h2>
+        <div class="adim-duzen">
+          <div class="ekran">
+            <img src="../gorseller/hafta-1/claude-ekran.svg" alt="Örnek ekran">
+            <span class="halka" style="left: 50%; top: 50%"></span>
+          </div>
+          <ol class="adimlar"><li>Bir</li><li>İki</li></ol>
+        </div>
+      </section>
+      <section id="siz-yapin" class="siz-yapin" data-background-color="#141413">
+        <p class="etiket">✋ Sıra sizde · 3 dakika</p>
+        <h2>Görev</h2>
+        <div class="istem">Merhaba!</div>
+        <div class="sayac" data-sure="180"></div>
+      </section>
+      <section id="mola">
+        <h2>Mola</h2>
+        <div class="sayac" data-sure="300"></div>
+      </section>
+    </div>
+  </div>
+  <img class="kose-logo" src="../gorseller/logolar/genc-kizilay.svg" alt="Genç Kızılay">
+  <script src="../ortak/vendor/reveal/reveal.js"></script>
+  <script src="../ortak/vendor/reveal/plugin/notes/notes.js"></script>
+  <script src="../ortak/js/etkilesim.js"></script>
+  <script src="../ortak/js/baslat.js"></script>
+</body>
+</html>
