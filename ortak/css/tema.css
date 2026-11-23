@@ -1,0 +1,3 @@
+:root { --baslik-font: 'Poppins', sans-serif; --govde-font: 'Inter', sans-serif; }
+.reveal { font-family: var(--govde-font); }
+.reveal h1, .reveal h2 { font-family: var(--baslik-font); font-weight: 700; }

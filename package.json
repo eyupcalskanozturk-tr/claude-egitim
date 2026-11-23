@@ -1,0 +1,19 @@
+{
+  "name": "claude-egitim",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "vendor": "node scripts/vendor.mjs",
+    "karekod": "qrcode -t svg -o gorseller/hafta-1/site-karekod.svg https://eyupcalskanozturk-tr.github.io/claude-egitim/",
+    "serve": "http-server . -p 4173 -c-1 -s",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "5.2.6",
+    "@fontsource/poppins": "5.2.6",
+    "@playwright/test": "1.55.0",
+    "http-server": "14.1.1",
+    "qrcode": "1.5.4",
+    "reveal.js": "5.2.1"
+  }
+}
