@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "vendor": "node scripts/vendor.mjs",
-    "karekod": "qrcode -t svg -o gorseller/hafta-1/site-karekod.svg https://eyupcalskanozturk-tr.github.io/claude-egitim/",
+    "karekod": "node scripts/karekod.mjs",
     "serve": "http-server . -p 4173 -c-1 -s",
     "test": "playwright test"
   },
