@@ -39,6 +39,16 @@ test('strong vurgusu kalın görünür (reset.css sıfırlamasına rağmen)', as
   await expect(page.locator('#anlatim strong')).toHaveCSS('font-weight', '700');
 });
 
+test('"Claude\'un cevabı" etiketi beyaz zeminde okunur (≥4.5:1 kontrast)', async ({ page }) => {
+  await page.goto('hafta-1/#/20');
+  await hazirBekle(page);
+  const renk = await page.locator('.cevap-kutusu').evaluate((e) => getComputedStyle(e, '::before').color);
+  const [r, g, b] = renk.match(/\d+/g).map(Number);
+  const l = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+  const parlaklik = 0.2126 * l(r) + 0.7152 * l(g) + 0.0722 * l(b);
+  expect((1 + 0.05) / (parlaklik + 0.05)).toBeGreaterThanOrEqual(4.5);
+});
+
 test('siz yapın: koyu tam ekran zemin, krem başlık', async ({ page }) => {
   await page.goto('testler/ornek.html#/siz-yapin');
   await hazirBekle(page);
