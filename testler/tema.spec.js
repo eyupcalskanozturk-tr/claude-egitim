@@ -33,6 +33,12 @@ test('anlatım: krem zemin, Poppins başlık ≥64px turuncu çizgili, koyu göv
   expect(s.govdeRenk).toBe(KOYU);
 });
 
+test('strong vurgusu kalın görünür (reset.css sıfırlamasına rağmen)', async ({ page }) => {
+  await page.goto('testler/ornek.html#/anlatim');
+  await hazirBekle(page);
+  await expect(page.locator('#anlatim strong')).toHaveCSS('font-weight', '700');
+});
+
 test('siz yapın: koyu tam ekran zemin, krem başlık', async ({ page }) => {
   await page.goto('testler/ornek.html#/siz-yapin');
   await hazirBekle(page);

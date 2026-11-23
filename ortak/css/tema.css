@@ -21,6 +21,7 @@ html, body, .reveal-viewport { background: var(--krem); }
 .reveal p, .reveal li { font-size: 40px; line-height: 1.4; margin: 0 0 20px; }
 .reveal ul, .reveal ol { margin: 0 0 30px 1.2em; padding: 0; }
 .reveal li + li { margin-top: 16px; }
+.reveal strong, .reveal b { font-weight: 700; }
 .vurgu { color: var(--turuncu); }
 
 /* ---------- Kapak ---------- */
