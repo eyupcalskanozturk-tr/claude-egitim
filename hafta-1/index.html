@@ -13,133 +13,147 @@
 <body>
   <div class="reveal">
     <div class="slides">
+
+      <!-- ================= AÇILIŞ ================= -->
+
       <!-- 1 -->
-      <section class="kapak" data-state="kapak-ekrani">
-        <div class="kapak-ic">
+      <section class="kapak foto-yan" data-state="kapak-ekrani">
+        <div class="kapak-ic metin">
           <div class="logolar">
-            <img src="../gorseller/logolar/genc-kizilay.png" alt="Genç Kızılay logosu">
+            <img src="../gorseller/logolar/genc-kizilay.png" alt="Türk Kızılay Genç logosu">
             <img src="../gorseller/logolar/comu.png" alt="ÇOMÜ logosu">
           </div>
-          <p class="ust-baslik">Genç Kızılay ÇOMÜ · Yapay Zeka Eğitimleri · Hafta 1</p>
-          <h1>Claude ile <span class="vurgu">Tanışma</span></h1>
-          <p class="alt-baslik">Teknik Bilimler MYO · Lab3 · 1 Aralık 2026</p>
+          <p class="ust-baslik">Yapay zeka eğitimleri, 1. hafta</p>
+          <h1>Claude ile Tanışma</h1>
+          <p class="alt-baslik">1 Aralık 2026<br>Teknik Bilimler MYO, Lab3</p>
         </div>
-        <aside class="notes">Hoş geldiniz. Kendini ve Eğitim Birimi'ni 30 saniyede tanıt. Telefonları sessize aldır ama kapattırma (e-posta kodu gerekebilir). Masa asistanlarını tanıt: "Takılan el kaldırsın, arkadaşlarımız yanınıza gelecek."</aside>
+        <img class="yan-foto" src="../gorseller/hafta-1/foto-gencler.jpg" alt="Kızılay yeleği giymiş gençler ve kırmızı balonlar">
+        <aside class="notes">(0–2 dk) Hoş geldiniz. Kendini ve Genç Kızılay ÇOMÜ Eğitim Birimi'ni 30 saniyede tanıt. Telefonları sessize aldır ama kapattırma: e-posta doğrulama kodu gerekebilir. Masa asistanlarını tanıt: "Takılan el kaldırsın, arkadaşlarımız yanınıza gelecek."</aside>
       </section>
 
       <!-- 2 -->
       <section>
-        <h2>Bugün ne yapacağız?</h2>
-        <ol>
-          <li>Claude'a girip <strong>ilk sohbetimizi</strong> yapacağız</li>
-          <li><strong>İyi soru sormayı</strong> öğreneceğiz</li>
-          <li>Cevabı <strong>kontrol etmeyi</strong> ve güvenli kullanmayı öğreneceğiz</li>
-        </ol>
-        <p class="not-kutusu">💡 Bugün dinlemekten çok <strong>yapacağız</strong>. Takılırsan el kaldır!</p>
-        <aside class="notes">Üç hedefi oku. "Her adımda siz de bilgisayarda deneyeceksiniz" de. Süre: yaklaşık 1,5 saat, ortada 5 dakika mola var.</aside>
+        <h2>Yapay zeka eğitimleri serisi</h2>
+        <p>Dört hafta, her salı, her hafta yeni bir konu. Her eğitimin sonunda katılım belgesi var.</p>
+        <div class="seri">
+          <div class="seri-adim simdi"><p class="hafta">1. hafta, bugün</p><h3>Claude ile Tanışma</h3><p>Giriş, iyi soru, güvenli kullanım</p></div>
+          <div class="seri-adim"><p class="hafta">2. hafta</p><h3>Claude ile Yazmak</h3><p>Dilekçe, duyuru, e-posta, özet</p></div>
+          <div class="seri-adim"><p class="hafta">3. hafta</p><h3>Office ve yapay zeka</h3><p>Word ve Excel işlerinde yardım</p></div>
+          <div class="seri-adim"><p class="hafta">4. hafta</p><h3>Kod yazmadan üretmek</h3><p>Mini uygulama ve Kızılay projesi</p></div>
+        </div>
+        <aside class="notes">(2–3 dk) Serinin tamamını göster: haftalar birbirinin üstüne kurulu, ama her hafta tek başına da anlaşılır. Bugün temeli atıyoruz. Katılım belgesinin her hafta ayrı verildiğini söyle.</aside>
       </section>
 
       <!-- 3 -->
       <section>
-        <h2>Isınma sorusu 🤔</h2>
+        <h2>Bugün ne yapacağız?</h2>
+        <div class="ikon-liste uclu">
+          <div class="ikon-madde"><span class="ikon" data-ikon="message-circle"></span><div><h3>Tanışacağız</h3><p>Claude'a girip ilk sohbetimizi yapacağız</p></div></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="target"></span><div><h3>Doğru soracağız</h3><p>İyi bir istemin formülünü öğreneceğiz</p></div></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="search-check"></span><div><h3>Kontrol edeceğiz</h3><p>Cevabı sınamayı ve güvenli kullanmayı öğreneceğiz</p></div></div>
+        </div>
+        <p class="not-kutusu">Bugün dinlemekten çok <strong>yapacağız</strong>. Takılırsan el kaldır, yanındakiyle birlikte çalışmak serbest.</p>
+        <aside class="notes">(3–4 dk) Üç hedefi oku. "Her adımda siz de bilgisayarda deneyeceksiniz." Süre yaklaşık 1,5 saat, ortada 5 dakika mola var.</aside>
+      </section>
+
+      <!-- 4 -->
+      <section>
+        <h2>Isınma sorusu</h2>
         <p>Bu sunumu kim hazırladı?</p>
         <div class="secmeli yatay">
           <button class="sik">Eyüp</button>
           <button class="sik">Claude</button>
           <button class="sik" data-dogru>İkisi birlikte</button>
         </div>
-        <aside class="notes">El kaldırarak oylat. Önce "Eyüp", sonra "Claude" şıkkına tıkla (gri, yanlış), en son "İkisi birlikte" (yeşil). Mesaj: "Ben ne istediğimi anlattım, Claude hazırladı, ben kontrol edip düzelttim. Bugün bu iş birliğini öğreneceğiz."</aside>
-      </section>
-
-      <!-- 4 -->
-      <section>
-        <h2>Yapay zekayı nerede gördünüz?</h2>
-        <ul>
-          <li>Telefonda, sosyal medyada, haberlerde...</li>
-          <li>Hiç kullanmadıysan da sorun yok!</li>
-        </ul>
-        <div class="sayac" data-sure="120"></div>
-        <aside class="notes">Sayacı başlat, 3–4 kişiye söz ver. Beklenen cevaplar: ChatGPT, çeviri uygulamaları, Instagram filtreleri, sesli asistanlar. Hiç kullanmayanları rahatlat: "Bugün tam size göre."</aside>
+        <aside class="notes">(4–5 dk) El kaldırarak oylat. Önce "Eyüp", sonra "Claude" şıkkına tıkla (gri, yanlış), en son "İkisi birlikte" (yeşil). Mesaj: "Ben ne istediğimi anlattım, Claude hazırladı, ben kontrol edip düzelttim. Bugün bu iş birliğini öğreneceğiz."</aside>
       </section>
 
       <!-- 5 -->
       <section>
-        <h2>1. Adım: Bilgisayara giriş</h2>
-        <div class="adim-duzen">
-          <div class="ekran">
-            <img src="../gorseller/hafta-1/cportal.svg" alt="cportal giriş ekranı">
-            <span class="halka" style="left: 50%; top: 55%"></span>
-          </div>
-          <ol class="adimlar">
-            <li>Açılan giriş sayfasına <strong>TC kimlik no</strong> yaz</li>
-            <li><strong>UBYS şifreni</strong> yaz</li>
-            <li><strong>Giriş</strong>'e tıkla</li>
-          </ol>
-        </div>
-        <aside class="notes">Herkes yapsın. Bitiren "girdim" diye el kaldırsın. Şifresini bilmeyen: masa asistanı yanına gitsin, olmazsa yanındakiyle eşli çalışsın. Gerçek ekran görüntüsü gelince halkanın yerini giriş düğmesine göre ayarla.</aside>
+        <h2>Yapay zekayı nerede gördünüz?</h2>
+        <p>Telefonda, sosyal medyada, haberlerde... Hiç kullanmadıysan da sorun yok!</p>
+        <div class="sayac" data-sure="120"></div>
+        <aside class="notes">(5–7 dk) Sayacı başlat, 3–4 kişiye söz ver. Beklenen cevaplar: ChatGPT, çeviri uygulamaları, Instagram filtreleri, sesli asistanlar, navigasyon. Hiç kullanmayanları rahatlat: "Bugün tam size göre."</aside>
       </section>
 
+      <!-- ================= BÖLÜM 1 ================= -->
+
       <!-- 6 -->
-      <section>
-        <h2>2. Adım: Claude'a giriş</h2>
-        <div class="adim-duzen">
-          <div class="ekran">
-            <img src="../gorseller/hafta-1/claude-giris.svg" alt="claude.ai giriş sayfası">
-            <span class="halka" style="left: 50%; top: 55%"></span>
-          </div>
-          <ol class="adimlar">
-            <li>Adres çubuğuna <strong>claude.ai</strong> yaz</li>
-            <li>Hesabını nasıl açtıysan öyle gir (<strong>Google</strong> veya e-posta)</li>
-            <li>Mesaj kutusunu görüyorsan tamam ✋</li>
-          </ol>
-        </div>
-        <aside class="notes">E-postayla girenlere kod gelir, telefonlarına baksınlar. Tarayıcı "şifreyi kaydet" derse HAYIR desinler, bu ortak bir bilgisayar. Hesap açmadan gelen yanındakiyle eşli çalışsın.</aside>
+      <section class="bolum" data-background-color="#D97757" data-bolum="Bölüm 1: Yapay zeka ve Claude">
+        <p class="bolum-no">1</p>
+        <h2>Yapay zeka ve Claude</h2>
+        <p class="bolum-aciklama">Yapay zeka ne, nasıl çalışır, Claude bunun neresinde?</p>
+        <aside class="notes">(7 dk) Bölüm geçişi. Kısa tut: "Önce neyle konuşacağımızı anlayalım."</aside>
       </section>
 
       <!-- 7 -->
-      <section>
-        <h2>3. Adım: Claude ekranını tanı</h2>
-        <div class="adim-duzen">
-          <div class="ekran">
-            <img src="../gorseller/hafta-1/claude-ekran.svg" alt="Claude sohbet ekranı">
-            <span class="halka" style="left: 50%; top: 60%"></span>
-          </div>
-          <ol class="adimlar">
-            <li><strong>Mesaj kutusu:</strong> buraya yazarsın</li>
-            <li><strong>Gönder:</strong> ok düğmesi ya da Enter</li>
-            <li><strong>Yeni sohbet:</strong> sol üstteki düğme</li>
-          </ol>
+      <section data-bolum="Bölüm 1: Yapay zeka ve Claude">
+        <h2>Yapay zeka nedir?</h2>
+        <p>Bilgisayarların insan gibi <strong>anlama, tahmin etme ve karar verme</strong> işlerini yapabilmesi. Her gün kullanıyoruz:</p>
+        <div class="ikon-liste">
+          <div class="ikon-madde"><span class="ikon" data-ikon="navigation"></span><p><strong>Navigasyon:</strong> trafiğe göre yol önerir</p></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="languages"></span><p><strong>Çeviri:</strong> metni başka dile çevirir</p></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="shopping-cart"></span><p><strong>Öneriler:</strong> izleyeceğin videoyu seçer</p></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="camera"></span><p><strong>Kamera:</strong> yüzünü tanıyıp kilidi açar</p></div>
         </div>
-        <aside class="notes">Kendi ekranında göster: mesaj kutusu, gönder, yeni sohbet, sol taraftaki geçmiş. "Her yeni konu için yeni sohbet açın" de.</aside>
+        <aside class="notes">(7–9 dk) Tanımı sadeleştir: "Bilgisayara kurallar yazmak yerine, çok sayıda örnekten öğrenmesini sağlıyoruz." Dört örneği sınıfın kendi telefonundan hatırlat.</aside>
       </section>
 
       <!-- 8 -->
-      <section class="siz-yapin" data-background-color="#141413">
-        <p class="etiket">✋ Sıra sizde · 3 dakika</p>
-        <h2>İlk mesajını gönder</h2>
-        <div class="istem">Merhaba, benim adım ___. Kendini bana 3 cümlede tanıt.</div>
-        <div class="sayac" data-sure="180"></div>
-        <aside class="notes">Sayacı başlat. "___ yerine kendi adınızı yazın." Türkçe karakterlerde zorlanan olursa göster. Süre bitince bir kişiye gelen cevabı sesli okut.</aside>
+      <section data-bolum="Bölüm 1: Yapay zeka ve Claude">
+        <h2>Üretken yapay zeka</h2>
+        <p>Sadece tanımaz, yeni bir şey <strong>üretir</strong>: metin, görsel, ses, kod.</p>
+        <div class="iki-sutun">
+          <div class="kutu iyi">
+            <h3>Ne üretebilir?</h3>
+            <ul>
+              <li>Yazı: duyuru, özet, e-posta</li>
+              <li>Görsel ve ses</li>
+              <li>Liste, tablo, plan</li>
+            </ul>
+          </div>
+          <div class="kutu">
+            <h3>Sohbet asistanları</h3>
+            <ul>
+              <li><strong>Claude</strong> (Anthropic)</li>
+              <li>ChatGPT (OpenAI), Gemini (Google)</li>
+              <li>Copilot (Microsoft)</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">(9–10 dk) "Bugün Claude'u kullanacağız ama öğrendikleriniz diğer asistanlarda da işe yarar: iyi soru sormak ve kontrol etmek her yerde aynı." Marka kavgasına girme.</aside>
       </section>
 
       <!-- 9 -->
-      <section>
-        <h2>Claude nedir?</h2>
-        <p>Claude, <strong>Anthropic</strong> şirketinin geliştirdiği bir <strong>yapay zeka asistanıdır</strong>.</p>
-        <ul>
-          <li>Çok büyük miktarda metin okuyarak dili öğrendi</li>
-          <li>Sorunu anlar, cevabı <strong>yazarak üretir</strong></li>
-        </ul>
-        <p class="not-kutusu">🧠 Benzetme: <strong>Çok okumuş ama bazen kendinden fazla emin bir arkadaş</strong></p>
-        <aside class="notes">Teknik ayrıntıya girme. "Cevabı bir yerden kopyalamaz, okuduklarından yola çıkarak yazar. Bu yüzden çoğu zaman çok iyidir ama bazen yanılır. 60. dakikada bunu kendi gözümüzle göreceğiz."</aside>
+      <section data-bolum="Bölüm 1: Yapay zeka ve Claude">
+        <h2>Nasıl çalışır?</h2>
+        <p>Telefon klavyesi bir sonraki kelimeyi tahmin eder:</p>
+        <p class="tahmin">Yarın sabah erkenden <span class="cip fragment">kalkıp</span><span class="cip fragment">okula</span><span class="cip fragment">gideceğim</span></p>
+        <p class="not-kutusu">Claude da aynı fikirle çalışır, ama <strong>çok daha fazla metin okuyarak</strong> öğrendiği için cümleleri, paragrafları, hatta bütün bir planı tahmin edebilir.</p>
+        <aside class="notes">(10–12 dk) → tuşuyla kelimeleri tek tek aç. "Telefonunuz sizin yazdıklarınızdan öğreniyor, Claude ise milyonlarca kitaptan, makaleden." Önemli sonuç: Claude bilgiyi bir veritabanından okumaz, en olası cevabı yazar. Bu yüzden genelde çok iyidir ama bazen yanılır. 4. bölümde buna döneceğiz.</aside>
       </section>
 
       <!-- 10 -->
-      <section>
+      <section data-bolum="Bölüm 1: Yapay zeka ve Claude">
+        <h2>Claude nedir?</h2>
+        <div class="iki-sutun">
+          <div class="ikon-liste" style="grid-template-columns: 1fr; gap: 28px;">
+            <div class="ikon-madde"><span class="ikon" data-ikon="bot"></span><p><strong>Anthropic</strong> şirketinin yapay zeka asistanı, 2023'ten beri kullanımda</p></div>
+            <div class="ikon-madde"><span class="ikon" data-ikon="globe"></span><p>Türkçe dahil <strong>birçok dilde</strong> konuşur</p></div>
+            <div class="ikon-madde"><span class="ikon" data-ikon="smartphone"></span><p>Tarayıcıda, telefonda ve bilgisayar uygulamasında çalışır</p></div>
+            <div class="ikon-madde"><span class="ikon" data-ikon="file-text"></span><p>Dosya ve fotoğraf okuyabilir, <strong>ücretsiz</strong> kullanılabilir</p></div>
+          </div>
+          <div class="claude-pano"><img src="../gorseller/logolar/claude.svg" alt="Claude simgesi"></div>
+        </div>
+        <aside class="notes">(12–13 dk) Simgeyi göster: "Ekranda bu turuncu yıldızı gördüğünüz yer Claude." Ücretsiz planın günlük bir mesaj sınırı olduğunu söyle; bugün kısa ve net mesajlarla çalışacağız.</aside>
+      </section>
+
+      <!-- 11 -->
+      <section data-bolum="Bölüm 1: Yapay zeka ve Claude">
         <h2>Neler yapabilir, nelere dikkat?</h2>
         <div class="iki-sutun">
           <div class="kutu iyi">
-            <h3>✅ Yapabilir</h3>
+            <h3>Yapabilir</h3>
             <ul>
               <li>Metin yazar, düzeltir</li>
               <li>Özetler, açıklar, çevirir</li>
@@ -147,7 +161,7 @@
             </ul>
           </div>
           <div class="kutu kotu">
-            <h3>⚠️ Dikkat</h3>
+            <h3>Dikkat</h3>
             <ul>
               <li>Yanılabilir, uydurabilir</li>
               <li>Her şeyi bilmez</li>
@@ -155,135 +169,274 @@
             </ul>
           </div>
         </div>
-        <aside class="notes">Sol sütun: günlük hayattan örnek ver (ödev açıklaması, e-posta, özet). Sağ sütun: "Claude bir yardımcı, karar veren sizsiniz."</aside>
-      </section>
-
-      <!-- 11 -->
-      <section>
-        <h2>Boşluğu doldur ✍️</h2>
-        <p>Claude bir yapay zeka <span class="bosluk" data-cevap="asistanıdır"></span>.</p>
-        <p>Claude da <span class="bosluk" data-cevap="hata"></span> yapabilir, bu yüzden cevabı <span class="bosluk" data-cevap="kontrol"></span> ederim.</p>
-        <aside class="notes">Sınıfa sor, cevabı aldıktan sonra boşluğa tıkla. Boşluklar sırayla: asistanıdır, hata, kontrol.</aside>
+        <aside class="notes">(13–14 dk) Sol sütun: günlük hayattan örnek ver (ödev konusunu açıklatmak, e-posta, özet). Sağ sütun: "Claude bir yardımcı, karar veren sizsiniz."</aside>
       </section>
 
       <!-- 12 -->
-      <section>
-        <h2>İyi istemin formülü</h2>
-        <div class="formul">
-          <div class="kart"><h3>👥 Kim için?</h3><p>Kimler okuyacak?</p></div>
-          <div class="kart"><h3>📝 Ne?</h3><p>Tam olarak ne istiyorsun?</p></div>
-          <div class="kart"><h3>🎨 Nasıl?</h3><p>Uzunluk, ton, biçim</p></div>
-        </div>
-        <p class="not-kutusu">💬 <strong>İstem</strong> = Claude'a yazdığın mesaj. Ne kadar <strong>net</strong> anlatırsan, o kadar <strong>iyi</strong> cevap alırsın.</p>
-        <aside class="notes">"İstem" = Claude'a yazdığımız mesaj. Benzetme: yeni gelen bir gönüllüye iş tarif etmek. "Bir şey yaz" dersen ne yapacağını bilemez. "Kimin için, ne, nasıl" dersen tam istediğini yapar.</aside>
+      <section data-bolum="Bölüm 1: Yapay zeka ve Claude">
+        <h2>Boşluğu doldur</h2>
+        <p>Claude bir yapay zeka <span class="bosluk" data-cevap="asistanıdır"></span>.</p>
+        <p>Claude bir sonraki kelimeyi <span class="bosluk" data-cevap="tahmin"></span> ederek yazar.</p>
+        <p>Claude da <span class="bosluk" data-cevap="hata"></span> yapabilir, bu yüzden cevabı <span class="bosluk" data-cevap="kontrol"></span> ederim.</p>
+        <aside class="notes">(14–15 dk) Sınıfa sor, cevabı aldıktan sonra boşluğa tıkla. Sırayla: asistanıdır, tahmin, hata, kontrol.</aside>
       </section>
 
+      <!-- ================= BÖLÜM 2 ================= -->
+
       <!-- 13 -->
-      <section>
-        <h2>Hangisi daha iyi?</h2>
-        <div class="iki-sutun">
-          <div class="kutu kotu">
-            <h3>A <span class="fragment rozet">❌</span></h3>
-            <div class="istem">Kızılay yaz</div>
-          </div>
-          <div class="kutu iyi">
-            <h3>B <span class="fragment rozet">✅</span></h3>
-            <div class="istem kucuk">Genç Kızılay için kan bağışı kampanyasına çağıran 3 cümlelik samimi bir Instagram duyurusu yaz.</div>
-          </div>
-        </div>
-        <aside class="notes">Önce iki istemi sesli oku, sınıfa "Hangisi?" diye sor. Sonra → tuşuyla ❌ ve ✅ işaretlerini sırayla aç.</aside>
+      <section class="bolum" data-background-color="#D97757" data-bolum="Bölüm 2: Claude ile tanış">
+        <p class="bolum-no">2</p>
+        <h2>Claude ile tanış</h2>
+        <p class="bolum-aciklama">Bilgisayara gir, Claude'u aç, ilk mesajını gönder.</p>
+        <aside class="notes">(15 dk) "Şimdi sıra sizde. Herkes bilgisayarının başına."</aside>
       </section>
 
       <!-- 14 -->
-      <section>
+      <section data-bolum="Bölüm 2: Claude ile tanış">
+        <h2>1. Adım: Bilgisayara giriş</h2>
+        <div class="adim-duzen">
+          <div class="ekran">
+            <img src="../gorseller/hafta-1/cportal.svg" alt="Temsili kampüs ağı giriş sayfası">
+            <span class="halka" style="left: 50%; top: 79%"></span>
+          </div>
+          <ol class="adimlar">
+            <li>Açılan giriş sayfasına <strong>TC kimlik no</strong> yaz</li>
+            <li><strong>UBYS şifreni</strong> yaz</li>
+            <li><strong>Giriş</strong>'e tıkla</li>
+          </ol>
+        </div>
+        <aside class="notes">(15–18 dk) Herkes yapsın. Bitiren "girdim" diye el kaldırsın. Şifresini bilmeyen: masa asistanı yanına gitsin, olmazsa yanındakiyle eşli çalışsın. Görsel temsilidir, lab'daki sayfa biraz farklı görünebilir.</aside>
+      </section>
+
+      <!-- 15 -->
+      <section data-bolum="Bölüm 2: Claude ile tanış">
+        <h2>2. Adım: Claude'a giriş</h2>
+        <div class="adim-duzen">
+          <div class="ekran">
+            <img src="../gorseller/hafta-1/claude-giris.svg" alt="Temsili claude.ai giriş sayfası">
+            <span class="halka" style="left: 50%; top: 50%"></span>
+          </div>
+          <ol class="adimlar">
+            <li>Adres çubuğuna <strong>claude.ai</strong> yaz</li>
+            <li>Hesabını nasıl açtıysan öyle gir: <strong>Google</strong> ya da e-posta</li>
+            <li>Mesaj kutusunu görüyorsan tamam</li>
+          </ol>
+        </div>
+        <aside class="notes">(18–20 dk) E-postayla girenlere kod gelir, telefonlarına baksınlar. Tarayıcı "şifreyi kaydet" derse HAYIR desinler, bu ortak bir bilgisayar. Hesap açmadan gelen yanındakiyle eşli çalışsın.</aside>
+      </section>
+
+      <!-- 16 -->
+      <section data-bolum="Bölüm 2: Claude ile tanış">
+        <h2>3. Adım: Claude ekranını tanı</h2>
+        <div class="adim-duzen">
+          <div class="ekran">
+            <img src="../gorseller/hafta-1/claude-ekran.svg" alt="Temsili Claude yeni sohbet ekranı">
+            <span class="isaret" style="left: 26%; top: 57%">1</span>
+            <span class="isaret" style="left: 81%; top: 65%">2</span>
+            <span class="isaret" style="left: 4%; top: 17%">3</span>
+          </div>
+          <ol class="adimlar">
+            <li><strong>Mesaj kutusu:</strong> buraya yazarsın</li>
+            <li><strong>Gönder:</strong> ok düğmesi ya da Enter</li>
+            <li><strong>Yeni sohbet:</strong> her yeni konu için</li>
+          </ol>
+        </div>
+        <aside class="notes">(20–21 dk) Kendi ekranında da göster: mesaj kutusu, gönder, yeni sohbet, sol taraftaki geçmiş. "Her yeni konu için yeni sohbet açın, eski konular karışmasın."</aside>
+      </section>
+
+      <!-- 17 -->
+      <section class="siz-yapin" data-background-color="#141413" data-bolum="Bölüm 2: Claude ile tanış">
+        <p class="etiket">Sıra sizde, 3 dakika</p>
+        <h2>İlk mesajını gönder</h2>
+        <div class="istem">Merhaba, benim adım ___. Kendini bana 3 cümlede tanıt.</div>
+        <div class="sayac" data-sure="180"></div>
+        <aside class="notes">(21–24 dk) Sayacı başlat. "___ yerine kendi adınızı yazın." Türkçe karakterlerde zorlanan olursa göster. Süre bitince bir kişiye gelen cevabı sesli okut.</aside>
+      </section>
+
+      <!-- ================= BÖLÜM 3 ================= -->
+
+      <!-- 18 -->
+      <section class="bolum" data-background-color="#D97757" data-bolum="Bölüm 3: İyi soru sormak">
+        <p class="bolum-no">3</p>
+        <h2>İyi soru sormak</h2>
+        <p class="bolum-aciklama">Ne kadar net sorarsan o kadar iyi cevap alırsın.</p>
+        <aside class="notes">(24 dk) "Bugünün en önemli bölümü bu."</aside>
+      </section>
+
+      <!-- 19 -->
+      <section data-bolum="Bölüm 3: İyi soru sormak">
+        <h2>İyi istemin formülü</h2>
+        <div class="formul">
+          <div class="kart"><span class="ikon" data-ikon="users"></span><h3>Kim için?</h3><p>Kimler okuyacak?</p></div>
+          <div class="kart"><span class="ikon" data-ikon="pen-line"></span><h3>Ne?</h3><p>Tam olarak ne istiyorsun?</p></div>
+          <div class="kart"><span class="ikon" data-ikon="palette"></span><h3>Nasıl?</h3><p>Uzunluk, ton, biçim</p></div>
+        </div>
+        <p class="not-kutusu"><strong>İstem</strong>, Claude'a yazdığın mesaj demek. Ne kadar <strong>net</strong> anlatırsan, o kadar <strong>iyi</strong> cevap alırsın.</p>
+        <aside class="notes">(24–26 dk) Benzetme: yeni gelen bir gönüllüye iş tarif etmek. "Bir şey yaz" dersen ne yapacağını bilemez. "Kimin için, ne, nasıl" dersen tam istediğini yapar.</aside>
+      </section>
+
+      <!-- 20 -->
+      <section data-bolum="Bölüm 3: İyi soru sormak">
+        <h2>Hangisi daha iyi?</h2>
+        <div class="iki-sutun">
+          <div class="kutu kotu">
+            <h3>A <span class="fragment rozet"><span class="ikon" data-ikon="x"></span></span></h3>
+            <div class="istem">Kızılay yaz</div>
+          </div>
+          <div class="kutu iyi">
+            <h3>B <span class="fragment rozet"><span class="ikon" data-ikon="check"></span></span></h3>
+            <div class="istem kucuk">Genç Kızılay için kan bağışı kampanyasına çağıran 3 cümlelik samimi bir Instagram duyurusu yaz.</div>
+          </div>
+        </div>
+        <aside class="notes">(26–27 dk) Önce iki istemi sesli oku, sınıfa "Hangisi?" diye sor. Sonra → tuşuyla çarpı ve tik işaretlerini sırayla aç.</aside>
+      </section>
+
+      <!-- 21 -->
+      <section data-bolum="Bölüm 3: İyi soru sormak">
         <h2>B neden daha iyi?</h2>
         <div class="secmeli">
           <button class="sik">Daha uzun olduğu için</button>
           <button class="sik" data-dogru>Kim için, ne ve nasıl olduğunu söylediği için</button>
           <button class="sik">Daha kibar olduğu için</button>
         </div>
-        <aside class="notes">Oylat, sonra tıkla. Açıkla: Kim için = Genç Kızılay takipçileri. Ne = kan bağışı duyurusu. Nasıl = 3 cümle, samimi, Instagram. "Uzunluk tek başına bir şey değiştirmez, önemli olan net bilgi."</aside>
+        <aside class="notes">(27–28 dk) Oylat, sonra tıkla. Açıkla: Kim için = Genç Kızılay takipçileri. Ne = kan bağışı duyurusu. Nasıl = 3 cümle, samimi, Instagram. "Uzunluk tek başına bir şey değiştirmez, önemli olan net bilgi."</aside>
       </section>
 
-      <!-- 15 -->
-      <section class="siz-yapin" data-background-color="#141413">
-        <p class="etiket">✋ Sıra sizde · 6 dakika</p>
+      <!-- 22 -->
+      <section class="siz-yapin" data-background-color="#141413" data-bolum="Bölüm 3: İyi soru sormak">
+        <p class="etiket">Sıra sizde, 6 dakika</p>
         <h2>Farkı kendin gör</h2>
-        <p>1️⃣ Önce A'yı gönder:</p>
+        <p>1. Önce A'yı gönder:</p>
         <div class="istem kucuk">Kızılay yaz</div>
-        <p>2️⃣ <strong>Yeni sohbet</strong> aç, B'yi gönder:</p>
+        <p>2. <strong>Yeni sohbet</strong> aç, B'yi gönder:</p>
         <div class="istem kucuk">Genç Kızılay için kan bağışı kampanyasına çağıran 3 cümlelik samimi bir Instagram duyurusu yaz.</div>
         <div class="sayac" data-sure="360"></div>
-        <aside class="notes">Sayacı başlat. Dolaş, yavaş yazanlara yardım et. Bitince 1–2 kişiye sor: "A'da ne geldi, B'de ne geldi?" Beklenen: A dağınık ve genel, B kullanıma hazır.</aside>
+        <aside class="notes">(28–34 dk) Sayacı başlat. Dolaş, yavaş yazanlara yardım et. Bitince 1–2 kişiye sor: "A'da ne geldi, B'de ne geldi?" Beklenen: A dağınık ve genel, B kullanıma hazır.</aside>
       </section>
 
-      <!-- 16 -->
-      <section>
-        <h2>Beğenmedin mi? Sohbete devam et 💬</h2>
-        <p>İlk cevap bir <strong>taslaktır</strong>. Aynı sohbette düzeltmesini iste:</p>
-        <div class="cipler">
-          <span class="cip">Daha kısa yap</span>
-          <span class="cip">Daha resmi yaz</span>
-          <span class="cip">Emoji ekle</span>
+      <!-- 23 -->
+      <section data-bolum="Bölüm 3: İyi soru sormak">
+        <h2>Altı altın ipucu</h2>
+        <div class="ikon-liste uclu">
+          <div class="ikon-madde"><span class="ikon" data-ikon="book-open"></span><div><h3>Bağlam ver</h3><p>Kimsin, durum ne?</p></div></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="drama"></span><div><h3>Rol ver</h3><p>"Bir ilk yardım eğitmeni gibi..."</p></div></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="quote"></span><div><h3>Örnek göster</h3><p>"Şuna benzer bir şey istiyorum"</p></div></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="table"></span><div><h3>Biçim söyle</h3><p>Liste mi, tablo mu, kaç madde?</p></div></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="list-ordered"></span><div><h3>Adım adım iste</h3><p>"Önce plan yap, sonra yaz"</p></div></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="circle-help"></span><div><h3>Soru sormasına izin ver</h3><p>"Eksik bilgi varsa önce bana sor"</p></div></div>
         </div>
-        <p class="not-kutusu">Yeniden başlamana gerek yok, Claude önceki mesajları hatırlar.</p>
-        <aside class="notes">⏭ ATLANABİLİR — Zaman darsa 16 ve 17'yi atla, 18'e geç. "Bir arkadaşınıza 'şunu biraz kısalt' der gibi yazın."</aside>
+        <aside class="notes">(34–36 dk) Hepsini ezberletme. "Formül temeli, bunlar ustalık." En işe yarayan ikisini vurgula: bağlam vermek ve biçim söylemek. Son ipucu çok güçlü: Claude eksik bilgiyi tahmin etmek yerine size sorar.</aside>
       </section>
 
-      <!-- 17 -->
-      <section class="siz-yapin" data-background-color="#141413">
-        <p class="etiket">✋ Sıra sizde · 5 dakika</p>
+      <!-- 24 -->
+      <section data-bolum="Bölüm 3: İyi soru sormak">
+        <h2>Bir örnek sohbet</h2>
+        <div class="sohbet">
+          <p class="balon sen">Sen deneyimli bir ilk yardım eğitmenisin. Üniversite öğrencilerine, deprem anında yapılacakları 4 maddelik kısa bir liste hâlinde anlat.</p>
+          <div class="balon claude">
+            <ol>
+              <li><strong>Çök:</strong> Olduğun yerde yere çök.</li>
+              <li><strong>Kapan:</strong> Sağlam bir masanın altına gir, başını koru.</li>
+              <li><strong>Tutun:</strong> Sarsıntı bitene kadar tutun.</li>
+              <li>Sarsıntı bitince sakin ol, merdivenle çık.</li>
+            </ol>
+          </div>
+        </div>
+        <aside class="notes">⏭ ATLANABİLİR — (36–37 dk) İstemdeki parçaları göster: rol (ilk yardım eğitmeni), kim için (üniversite öğrencileri), ne (deprem anında yapılacaklar), biçim (4 maddelik liste). "Çök, kapan, tutun" AFAD'ın da önerdiği yöntem; Claude'un cevabını resmi kaynakla karşılaştırmak 4. bölümün konusu.</aside>
+      </section>
+
+      <!-- 25 -->
+      <section data-bolum="Bölüm 3: İyi soru sormak">
+        <h2>Beğenmedin mi? Sohbete devam et</h2>
+        <p>İlk cevap bir <strong>taslaktır</strong>. Aynı sohbette düzeltmesini iste:</p>
+        <div class="sohbet">
+          <p class="balon sen">Daha kısa yap ve 2 emoji ekle.</p>
+          <p class="balon claude">Tabii! İşte daha kısa hâli...</p>
+          <p class="balon sen">Şimdi daha resmi bir dille yaz.</p>
+        </div>
+        <aside class="notes">⏭ ATLANABİLİR — (37–38 dk) "Yeniden başlamanıza gerek yok, Claude aynı sohbetteki önceki mesajları hatırlar. Bir arkadaşınıza 'şunu biraz kısalt' der gibi yazın."</aside>
+      </section>
+
+      <!-- 26 -->
+      <section class="siz-yapin" data-background-color="#141413" data-bolum="Bölüm 3: İyi soru sormak">
+        <p class="etiket">Sıra sizde, 5 dakika</p>
         <h2>Cevabı 2 kez düzelttir</h2>
         <p>B'nin cevabının altına sırayla yaz:</p>
         <div class="istem kucuk">Daha kısa yap ve 2 emoji ekle.</div>
         <div class="istem kucuk">Şimdi daha resmi bir dille yaz.</div>
         <div class="sayac" data-sure="300"></div>
-        <aside class="notes">⏭ ATLANABİLİR — Sayacı başlat. Bitince sor: "Hangi sürümü en çok beğendiniz?" Mesaj: aynı istek, farklı tonlar. Seçim sizin.</aside>
+        <aside class="notes">⏭ ATLANABİLİR — (38–43 dk) Sayacı başlat. Bitince sor: "Hangi sürümü en çok beğendiniz?" Mesaj: aynı istek, farklı tonlar. Seçim sizin.</aside>
       </section>
 
-      <!-- 18 -->
-      <section>
-        <h2>Formülü tamamla ✍️</h2>
+      <!-- 27 -->
+      <section data-bolum="Bölüm 3: İyi soru sormak">
+        <h2>Formülü tamamla</h2>
         <p>İyi istem: <span class="bosluk" data-cevap="Kim"></span> için? + <span class="bosluk" data-cevap="Ne"></span>? + <span class="bosluk" data-cevap="Nasıl"></span>?</p>
+        <p>Rol ver: "Bir ilk yardım <span class="bosluk" data-cevap="eğitmeni"></span> gibi..."</p>
         <p>İlk cevabı beğenmezsem <span class="bosluk" data-cevap="sohbete devam"></span> ederim.</p>
-        <aside class="notes">Sınıfa sor, sonra boşluklara sırayla tıkla: Kim, Ne, Nasıl, sohbete devam. 16 atlandıysa son boşluktan önce sözlü açıkla: "Cevabı beğenmezseniz yeniden başlamayın, aynı sohbette 'daha kısa yap' gibi düzeltme isteyin."</aside>
+        <aside class="notes">(43–45 dk) Sınıfa sor, sonra boşluklara sırayla tıkla: Kim, Ne, Nasıl, eğitmeni, sohbete devam. 24–26 atlandıysa son boşluktan önce sözlü açıkla: "Cevabı beğenmezseniz yeniden başlamayın, aynı sohbette 'daha kısa yap' gibi düzeltme isteyin."</aside>
       </section>
 
-      <!-- 19 -->
-      <section>
-        <h2>Mola ☕</h2>
-        <p>5 dakika sonra devam ediyoruz. <strong>Bilgisayarı kapatma!</strong></p>
-        <div class="sayac" data-sure="300"></div>
-        <aside class="notes">Sayacı başlat. Molada takılan masalara git. Moladan sonra yarısının döndüğünü görmeden başlama.</aside>
+      <!-- 28 -->
+      <section class="foto-yan" data-bolum="Bölüm 3: İyi soru sormak">
+        <div class="metin">
+          <h2>Mola</h2>
+          <p>5 dakika sonra devam ediyoruz.</p>
+          <p><strong>Bilgisayarı kapatma!</strong></p>
+          <div class="sayac" data-sure="300"></div>
+        </div>
+        <img class="yan-foto" src="../gorseller/hafta-1/foto-kar.jpg" alt="Karlı bir köyde yardım taşıyan Kızılay gönüllüsü">
+        <aside class="notes">(45–50 dk) Sayacı başlat. Molada takılan masalara git. Moladan sonra çoğunluk dönmeden başlama.</aside>
       </section>
 
-      <!-- 20 -->
-      <section>
+      <!-- ================= BÖLÜM 4 ================= -->
+
+      <!-- 29 -->
+      <section class="bolum" data-background-color="#D97757" data-bolum="Bölüm 4: Kontrol et, güvenli kullan">
+        <p class="bolum-no">4</p>
+        <h2>Kontrol et, güvenli kullan</h2>
+        <p class="bolum-aciklama">Claude çok yardımcıdır ama sorumluluk her zaman bizde.</p>
+        <aside class="notes">(50 dk) "Şimdi en az iyi soru sormak kadar önemli bir konu."</aside>
+      </section>
+
+      <!-- 30 -->
+      <section data-bolum="Bölüm 4: Kontrol et, güvenli kullan">
         <h2>Claude da yanılabilir</h2>
-        <p>Bazen <strong>kendinden emin bir şekilde yanlış</strong> bilgi verebilir.</p>
-        <ul>
-          <li>Özellikle <strong>tarih, sayı, isim ve kaynaklarda</strong></li>
-          <li>Önemli bilgiyi <strong>başka bir kaynaktan</strong> kontrol et</li>
-        </ul>
-        <p class="not-kutusu">🧠 Hatırla: çok okumuş ama bazen kendinden fazla emin bir arkadaş</p>
-        <aside class="notes">Buna "uydurma" ya da "halüsinasyon" denir. Claude yalan söylemez ama bilmediği yerde akla yatkın bir şey üretebilir. Resmi bir yazıya girecek her bilgi kontrol edilir.</aside>
+        <p>Bazen <strong>kendinden emin bir şekilde yanlış</strong> bilgi verebilir. Buna <strong>halüsinasyon</strong> ya da uydurma denir.</p>
+        <div class="ikon-liste">
+          <div class="ikon-madde"><span class="ikon" data-ikon="calendar"></span><p>En çok <strong>tarih, sayı, isim</strong> ve kaynaklarda olur</p></div>
+          <div class="ikon-madde"><span class="ikon" data-ikon="search"></span><p>Önemli bilgiyi <strong>başka bir kaynaktan</strong> kontrol et</p></div>
+        </div>
+        <aside class="notes">(50–52 dk) 9. slayttaki tahmin fikrine bağla: "Claude en olası cevabı yazıyor. Bilmediği yerde de akla yatkın bir şey yazabiliyor. Yalan söylemiyor, ama yanılabiliyor." Resmi bir yazıya girecek her bilgi kontrol edilir.</aside>
       </section>
 
-      <!-- 21 -->
-      <section>
-        <h2>Hatayı bul 🔍</h2>
+      <!-- 31 -->
+      <section data-bolum="Bölüm 4: Kontrol et, güvenli kullan">
+        <h2>Hatayı bul</h2>
         <p>Claude'dan şöyle bir cevap geldiğini düşünün:</p>
         <div class="cevap-kutusu">Türk Kızılay 1923 yılında kuruldu. Afetlerde barınma ve beslenme desteği verir, kan bağışı çalışmaları yürütür.</div>
-        <p class="fragment not-kutusu">❌ 1923 değil → ✅ <strong>1868</strong> (Osmanlı döneminde, İstanbul'da kuruldu)</p>
-        <aside class="notes">Sınıfa sor: "Bu cevapta bir yanlış var, hangisi?" Bulan olursa → ile cevabı aç. Doğrulama kaynağı: kizilay.org.tr tarihçe sayfası. Mesaj: "Cevap çok düzgün ve emin görünüyor, ama yanlış. Bu yüzden kontrol ediyoruz." Biri "1923 de doğru" derse: 1923'te kurum yeni değil, adı "Türkiye Hilal-i Ahmer Cemiyeti" oldu. Kuruluş 1868. Bu da güzel bir ders: yarı doğru bilgi de kontrol gerektirir.</aside>
+        <p class="fragment not-kutusu">1923 değil, <strong>1868</strong>. Osmanlı döneminde, İstanbul'da kuruldu.</p>
+        <aside class="notes">(52–54 dk) Sınıfa sor: "Bu cevapta bir yanlış var, hangisi?" Bulan olursa → ile cevabı aç. Doğrulama kaynağı: kizilay.org.tr tarihçe sayfası. Mesaj: "Cevap çok düzgün ve emin görünüyor, ama yanlış. Bu yüzden kontrol ediyoruz." Biri "1923 de doğru" derse: 1923'te kurum yeni değil, adı "Türkiye Hilal-i Ahmer Cemiyeti" oldu. Kuruluş 1868. Bu da güzel bir ders: yarı doğru bilgi de kontrol gerektirir.</aside>
       </section>
 
-      <!-- 22 -->
-      <section>
-        <h2>🚫 Claude'a asla yazma</h2>
+      <!-- 32 -->
+      <section data-bolum="Bölüm 4: Kontrol et, güvenli kullan">
+        <h2>Nasıl kontrol ederim?</h2>
+        <ol class="adim-serisi">
+          <li><strong>Resmi kaynağa bak</strong>kizilay.org.tr, afad.gov.tr, e-Devlet</li>
+          <li><strong>Claude'a sor</strong>"Bundan emin misin? Nereden biliyorsun?"</li>
+          <li><strong>Bir uzmana danış</strong>Sağlık, hukuk, para konularında mutlaka</li>
+        </ol>
+        <p class="not-kutusu">Kural: Bir bilgiyi <strong>başkasına aktaracaksan</strong>, önce doğrula.</p>
+        <aside class="notes">(54–55 dk) "Claude'a sormak tek başına yetmez, çünkü yine yanılabilir; ama çoğu zaman 'emin değilim' diye düzeltir." Kızılay duyurularında, ilk yardım bilgisinde resmi kaynak şart.</aside>
+      </section>
+
+      <!-- 33 -->
+      <section data-bolum="Bölüm 4: Kontrol et, güvenli kullan">
+        <h2>Claude'a asla yazma</h2>
         <div class="iki-sutun">
           <div class="kutu kotu">
-            <h3>Kişisel bilgiler</h3>
+            <h3><span class="ikon" data-ikon="lock"></span> Kişisel bilgiler</h3>
             <ul>
               <li>TC kimlik no</li>
               <li>Telefon, adres</li>
@@ -291,7 +444,7 @@
             </ul>
           </div>
           <div class="kutu kotu">
-            <h3>Kızılay'da</h3>
+            <h3><span class="ikon" data-ikon="hand-heart"></span> Kızılay'da</h3>
             <ul>
               <li><strong>Afetzedelerin</strong> bilgileri</li>
               <li>Bağışçıların sağlık bilgileri</li>
@@ -300,11 +453,11 @@
           </div>
         </div>
         <p class="not-kutusu">Kural: <strong>"Bunu bir yabancıya söyler miydim?"</strong> Hayırsa yazma.</p>
-        <aside class="notes">KVKK'dan kısaca bahset: başkasının kişisel verisi bize emanettir. Bir metinde gerçek isim gerekiyorsa "[isim]" diye yer tutucu kullanıp sonradan kendin doldur.</aside>
+        <aside class="notes">(55–57 dk) KVKK'dan kısaca bahset: başkasının kişisel verisi bize emanettir. Bir metinde gerçek isim gerekiyorsa "[isim]" diye yer tutucu kullanıp sonradan kendin doldur.</aside>
       </section>
 
-      <!-- 23 -->
-      <section>
+      <!-- 34 -->
+      <section data-bolum="Bölüm 4: Kontrol et, güvenli kullan">
         <h2>Hangisini Claude'a yazabilirim?</h2>
         <div class="secmeli">
           <button class="sik" data-dogru>"Kan bağışı günü için afiş metni yaz."</button>
@@ -312,38 +465,89 @@
           <button class="sik">"Şu şifrem güvenli mi: ..."</button>
           <button class="sik" data-dogru>"Gönüllü toplantısı için 5 maddelik gündem öner."</button>
         </div>
-        <aside class="notes">⏭ ATLANABİLİR — Her şıkkı sırayla oylat ve tıkla. Doğrular: 1 ve 4. İkincisi için: "Mektup yazdırılabilir ama TC no ve adres olmadan, [isim] yer tutucusuyla."</aside>
+        <aside class="notes">⏭ ATLANABİLİR — (57–58 dk) Her şıkkı sırayla oylat ve tıkla. Doğrular: 1 ve 4. İkincisi için: "Mektup yazdırılabilir ama TC no ve adres olmadan, [isim] yer tutucusuyla."</aside>
       </section>
 
-      <!-- 24 -->
-      <section class="siz-yapin" data-background-color="#141413">
-        <p class="etiket">✋ Sıra sizde · 8 dakika</p>
-        <h2>Kızılay görevi 🚑</h2>
-        <p>Birini seç, <strong>formülü</strong> kullan (Kim için + Ne + Nasıl):</p>
+      <!-- 35 -->
+      <section data-bolum="Bölüm 4: Kontrol et, güvenli kullan">
+        <h2>Öğrenmek için kullan</h2>
+        <div class="iki-sutun">
+          <div class="kutu iyi">
+            <h3><span class="ikon" data-ikon="graduation-cap"></span> Öğrenmeni hızlandırır</h3>
+            <ul>
+              <li>Anlamadığın konuyu açıklat</li>
+              <li>Kendini sınavla: "Bana 5 soru sor"</li>
+              <li>Kendi taslağını geliştir</li>
+            </ul>
+          </div>
+          <div class="kutu kotu">
+            <h3><span class="ikon" data-ikon="x"></span> Öğrenmeni engeller</h3>
+            <ul>
+              <li>Ödevi kopyalayıp teslim etmek</li>
+              <li>Okumadan, kontrol etmeden paylaşmak</li>
+              <li>Düşünmeyi tamamen bırakmak</li>
+            </ul>
+          </div>
+        </div>
+        <aside class="notes">(58–60 dk) "Claude'u yanınızda sabırlı bir öğretmen gibi düşünün. Ödevi onun yazması size bir şey kazandırmaz, ama size öğretmesi çok şey kazandırır." Hocaların yapay zeka kurallarına uymayı hatırlat.</aside>
+      </section>
+
+      <!-- ================= BÖLÜM 5 ================= -->
+
+      <!-- 36 -->
+      <section class="bolum" data-background-color="#D97757" data-bolum="Bölüm 5: Öğrendiğini kullan">
+        <p class="bolum-no">5</p>
+        <h2>Öğrendiğini kullan</h2>
+        <p class="bolum-aciklama">Bir Kızılay gönüllüsü olarak gerçek bir işi Claude ile birlikte yap.</p>
+        <aside class="notes">(60 dk) "Şimdi her şeyi bir araya getiriyoruz."</aside>
+      </section>
+
+      <!-- 37 -->
+      <section class="siz-yapin" data-background-color="#141413" data-bolum="Bölüm 5: Öğrendiğini kullan">
+        <p class="etiket">Sıra sizde, 8 dakika</p>
+        <h2>Kızılay görevi</h2>
+        <p>Birini seç, <strong>formülü ve ipuçlarını</strong> kullan:</p>
         <div class="kartlar">
-          <div class="kart"><p>🎒 Deprem çantası kontrol listesi</p></div>
-          <div class="kart"><p>🩸 Kan bağışı duyurusu</p></div>
-          <div class="kart"><p>🤝 Yeni gönüllüye hoş geldin mesajı</p></div>
+          <div class="kart"><span class="ikon" data-ikon="backpack"></span><p>Deprem çantası kontrol listesi</p></div>
+          <div class="kart"><span class="ikon" data-ikon="droplet"></span><p>Kan bağışı duyurusu</p></div>
+          <div class="kart"><span class="ikon" data-ikon="heart-handshake"></span><p>Yeni gönüllüye hoş geldin mesajı</p></div>
         </div>
         <div class="istem kucuk">Örnek: Genç Kızılay gönüllüleri için deprem çantasına konacak 10 maddelik kısa bir kontrol listesi hazırla.</div>
         <div class="sayac" data-sure="480"></div>
-        <aside class="notes">Sayacı başlat. Örneği kopyalamak yerine kendi istemlerini yazmaya teşvik et. Bitirenlere: "Bir kez düzelttirin." Dolaşırken paylaşılacak 2–3 güzel örnek seç.</aside>
+        <aside class="notes">(60–68 dk) Sayacı başlat. Örneği kopyalamak yerine kendi istemlerini yazmaya teşvik et. Bitirenlere: "Bir kez düzelttirin." Deprem çantası seçenler listeyi afad.gov.tr ile karşılaştırsın. Dolaşırken paylaşılacak 2–3 güzel örnek seç.</aside>
       </section>
 
-      <!-- 25 -->
-      <section>
-        <h2>Sonuçlarımızı paylaşalım 🎤</h2>
-        <ul>
-          <li>2–3 gönüllü sonucunu sesli okusun</li>
-          <li>İstemine <strong>ne yazdın?</strong></li>
-          <li>Sonradan <strong>neyi düzelttirdin?</strong></li>
-        </ul>
-        <aside class="notes">Görevde seçtiğin örneklere söz ver. Her paylaşımdan sonra formülün hangi parçasının iyi kullanıldığını söyle. Alkış!</aside>
+      <!-- 38 -->
+      <section class="foto-yan" data-bolum="Bölüm 5: Öğrendiğini kullan">
+        <div class="metin">
+          <h2>Sonuçlarımızı paylaşalım</h2>
+          <ul>
+            <li>2–3 gönüllü sonucunu sesli okusun</li>
+            <li>İstemine <strong>ne yazdın?</strong></li>
+            <li>Sonradan <strong>neyi düzelttirdin?</strong></li>
+          </ul>
+        </div>
+        <img class="yan-foto" src="../gorseller/hafta-1/foto-eller.jpg" alt="Türk Kızılay yardım kutusunu tutan eller">
+        <aside class="notes">(68–73 dk) Görevde seçtiğin örneklere söz ver. Her paylaşımdan sonra formülün hangi parçasının iyi kullanıldığını söyle. Alkış!</aside>
       </section>
 
-      <!-- 26 -->
-      <section>
-        <h2>Çıkış quizi 🏁</h2>
+      <!-- 39 -->
+      <section data-bolum="Bölüm 5: Öğrendiğini kullan">
+        <h2>Mini sözlük</h2>
+        <dl class="sozluk">
+          <div><dt>Yapay zeka</dt><dd>Bilgisayarın örneklerden öğrenip tahmin yapması</dd></div>
+          <div><dt>Üretken yapay zeka</dt><dd>Yeni metin, görsel ya da ses üreten yapay zeka</dd></div>
+          <div><dt>İstem</dt><dd>Claude'a yazdığın mesaj, isteğin</dd></div>
+          <div><dt>Halüsinasyon</dt><dd>Yapay zekanın emin bir dille yanlış bilgi vermesi</dd></div>
+          <div><dt>Sohbet</dt><dd>Claude'un hatırladığı mesajlar dizisi; yeni konu, yeni sohbet</dd></div>
+          <div><dt>Kişisel veri</dt><dd>Birini tanımlayan bilgi: TC no, telefon, adres, sağlık</dd></div>
+        </dl>
+        <aside class="notes">(73–75 dk) Hızlıca oku, ezberletme. "Bu kelimeleri bir sonraki hafta da kullanacağız."</aside>
+      </section>
+
+      <!-- 40 -->
+      <section data-bolum="Bölüm 5: Öğrendiğini kullan">
+        <h2>Çıkış quizi</h2>
         <p>1. İyi istem: Kim için + Ne + <span class="bosluk" data-cevap="Nasıl"></span></p>
         <p>2. "Claude'un cevabı her zaman doğrudur."</p>
         <div class="secmeli yatay">
@@ -351,39 +555,52 @@
           <button class="sik" data-dogru>Yanlış</button>
         </div>
         <p>3. Afetzedelerin bilgilerini Claude'a <span class="bosluk" data-cevap="yazmam"></span>.</p>
-        <aside class="notes">Hızlı tur, sınıf hep birlikte cevaplasın. Sırayla: boşluk (Nasıl), seçmeli (Yanlış), boşluk (yazmam).</aside>
+        <aside class="notes">(75–78 dk) Hızlı tur, sınıf hep birlikte cevaplasın. Sırayla: boşluk (Nasıl), seçmeli (Yanlış), boşluk (yazmam).</aside>
       </section>
 
-      <!-- 27 -->
-      <section>
-        <h2>Bugün öğrendiklerimiz ✅</h2>
-        <ol>
-          <li>Claude'a girip sohbet etmek</li>
-          <li><strong>Kim için + Ne + Nasıl</strong> ile iyi istem yazmak</li>
-          <li>Cevabı <strong>kontrol etmek</strong>, kişisel veriyi paylaşmamak</li>
-        </ol>
-        <p class="not-kutusu">📅 Gelecek hafta: <strong>Claude ile Yazmak</strong> (dilekçe, duyuru, e-posta)</p>
-        <aside class="notes">Üç maddeyi sınıfla birlikte tekrar et. Gelecek haftanın konusunu duyur, "Evde bu hafta öğrendiğinizle bir şey deneyin" de.</aside>
+      <!-- 41 -->
+      <section data-bolum="Bölüm 5: Öğrendiğini kullan">
+        <h2>Bugün öğrendiklerimiz</h2>
+        <div class="iki-sutun">
+          <ol>
+            <li>Claude'a girip sohbet etmek</li>
+            <li><strong>Kim için + Ne + Nasıl</strong> ile iyi istem yazmak</li>
+            <li>Cevabı <strong>kontrol etmek</strong>, kişisel veriyi paylaşmamak</li>
+          </ol>
+          <div class="kutu iyi">
+            <h3><span class="ikon" data-ikon="house"></span> Evde dene</h3>
+            <ul>
+              <li>Bir ders konusunu açıklat</li>
+              <li>"Bana 5 soru sor" de, kendini sına</li>
+              <li>Bir duyuruyu 2 kez düzelttir</li>
+            </ul>
+          </div>
+        </div>
+        <p class="not-kutusu">Gelecek hafta: <strong>Claude ile Yazmak</strong>. Dilekçe, duyuru, e-posta.</p>
+        <aside class="notes">(78–80 dk) Üç maddeyi sınıfla birlikte tekrar et. Evde dene önerilerini okut. Gelecek haftanın konusunu duyur.</aside>
       </section>
 
-      <!-- 28 -->
+      <!-- 42 -->
       <section>
-        <h2>Teşekkürler! 🙌</h2>
+        <h2>Teşekkürler!</h2>
         <div class="iki-sutun">
           <div>
-            <p>🎓 Katılım belgeleri Genç Kızılay ÇOMÜ tarafından iletilecek.</p>
-            <p class="not-kutusu">🔒 Çıkmadan önce <strong>Claude'dan ve Google hesabından çıkış yap!</strong></p>
+            <p>Katılım belgeleri Genç Kızılay ÇOMÜ tarafından iletilecek.</p>
+            <p class="not-kutusu"><span class="ikon" data-ikon="log-out"></span> Çıkmadan önce <strong>Claude'dan ve Google hesabından çıkış yap!</strong></p>
+            <p class="kucuk-not">Fotoğraflar: genckizilay.org.tr. İkonlar: Lucide (ISC lisansı). Ekran görselleri temsilidir.</p>
           </div>
           <div>
             <img class="karekod" src="../gorseller/hafta-1/site-karekod.svg" alt="Sunum sitesinin karekodu">
             <p>Sunuma tekrar bak</p>
           </div>
         </div>
-        <aside class="notes">Teşekkür et. ÇIKIŞ YAPMAYI MUTLAKA HATIRLAT, bu ortak bir bilgisayar. Karekod sunum sitesine götürür. Masa asistanlarına teşekkür et.</aside>
+        <aside class="notes">(80–85 dk) Teşekkür et. ÇIKIŞ YAPMAYI MUTLAKA HATIRLAT, bu ortak bir bilgisayar. Karekod sunum sitesine götürür. Masa asistanlarına teşekkür et. Kalan süre soru-cevap.</aside>
       </section>
+
     </div>
   </div>
-  <img class="kose-logo" src="../gorseller/logolar/genc-kizilay.png" alt="Genç Kızılay">
+  <img class="kose-logo" src="../gorseller/logolar/genc-kizilay.png" alt="Türk Kızılay Genç">
+  <div class="bolum-izi"></div>
   <script src="../ortak/vendor/reveal/reveal.js"></script>
   <script src="../ortak/vendor/reveal/plugin/notes/notes.js"></script>
   <script src="../ortak/js/etkilesim.js"></script>

@@ -17,8 +17,8 @@ html, body, .reveal-viewport { background: var(--krem); }
 .reveal h1, .reveal h2, .reveal h3 { font-family: var(--baslik-font); font-weight: 700; color: var(--koyu); line-height: 1.15; }
 .reveal h1 { font-size: 110px; margin: 0 0 30px; }
 .reveal h2 { font-size: 64px; margin: 0 0 44px; padding-bottom: 14px; border-bottom: 6px solid var(--turuncu); display: inline-block; }
-.reveal h3 { font-size: 44px; margin: 0 0 20px; }
-.reveal p, .reveal li { font-size: 40px; line-height: 1.4; margin: 0 0 20px; }
+.reveal h3 { font-size: 48px; margin: 0 0 20px; }
+.reveal p, .reveal li { font-size: 44px; line-height: 1.4; margin: 0 0 20px; }
 .reveal ul, .reveal ol { margin: 0 0 30px 1.2em; padding: 0; }
 .reveal li + li { margin-top: 16px; }
 .reveal strong, .reveal b { font-weight: 700; }
@@ -64,7 +64,7 @@ html, body, .reveal-viewport { background: var(--krem); }
 .etiket { font-weight: 700; color: var(--turuncu) !important; margin: 0 0 12px; }
 
 /* ---------- Adım adım ---------- */
-.adim-duzen { display: grid; grid-template-columns: 1.35fr 1fr; gap: 60px; align-items: start; }
+.adim-duzen { display: grid; grid-template-columns: 1.7fr 1fr; gap: 60px; align-items: start; }
 .ekran { position: relative; }
 .ekran img { display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 30px rgba(20, 20, 19, 0.15); }
 .halka { position: absolute; width: 150px; height: 150px; border: 8px solid var(--turuncu); border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; }
@@ -91,7 +91,7 @@ html, body, .reveal-viewport { background: var(--krem); }
 .bosluk.acik { color: var(--koyu); background: rgba(217, 119, 87, 0.18); border-radius: 6px 6px 0 0; }
 
 /* ---------- Sayaç ---------- */
-.sayac { display: flex; align-items: center; gap: 36px; margin-top: 20px; }
+.sayac { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 36px; margin-top: 20px; }
 .sayac-ekran { font: 700 150px var(--baslik-font); color: var(--turuncu); font-variant-numeric: tabular-nums; min-width: 4.5ch; line-height: 1; }
 .sayac.bitti .sayac-ekran { animation: nabiz 1s infinite; }
 .sayac-dugme { font: 700 32px var(--govde-font); padding: 16px 32px; border-radius: 16px; border: 3px solid var(--turuncu); background: transparent; color: inherit; cursor: pointer; }
@@ -122,7 +122,7 @@ html, body, .reveal-viewport { background: var(--krem); }
 
 /* ---------- İkonlar (Lucide, maske ile renklenir) ---------- */
 .ikon { display: inline-block; width: 1em; height: 1em; background: currentColor; -webkit-mask: var(--ikon) center / contain no-repeat; mask: var(--ikon) center / contain no-repeat; vertical-align: -0.14em; }
-.ikon-liste { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 64px; }
+.ikon-liste { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 64px; margin-bottom: 40px; }
 .ikon-liste.uclu { grid-template-columns: repeat(3, 1fr); }
 .ikon-madde { display: flex; gap: 28px; align-items: flex-start; }
 .ikon-madde .ikon { font-size: 68px; color: var(--turuncu); flex: none; }
@@ -137,8 +137,51 @@ html, body, .reveal-viewport { background: var(--krem); }
 .foto-kaynak { position: absolute; right: 16px; bottom: 12px; font-size: 18px; color: #fff; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
 
 /* ---------- Alt köşe: hangi bölümdeyiz ---------- */
-.bolum-izi { position: fixed; left: 24px; bottom: 16px; z-index: 30; font: 600 18px var(--govde-font); color: #5E5D59; background: rgba(250, 249, 245, 0.9); padding: 4px 14px; border-radius: 999px; }
+.bolum-izi { position: fixed; left: 24px; bottom: 16px; z-index: 30; font: 600 22px var(--govde-font); color: #5E5D59; background: rgba(250, 249, 245, 0.9); padding: 4px 14px; border-radius: 999px; }
 .bolum-izi:empty { display: none; }
 
 /* ---------- Ekran üzerindeki numaralı işaretler ---------- */
 .isaret { position: absolute; width: 64px; height: 64px; border-radius: 50%; background: var(--turuncu); color: #fff; font: 700 36px/64px var(--baslik-font); text-align: center; transform: translate(-50%, -50%); box-shadow: 0 0 0 6px rgba(250, 249, 245, 0.9); }
+
+/* ---------- Seri zaman çizelgesi (4 hafta) ---------- */
+.seri { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 10px 0 40px; }
+.seri-adim { border-top: 10px solid var(--acik-gri); padding-top: 22px; }
+.seri-adim.simdi { border-top-color: var(--turuncu); }
+.reveal .seri-adim .hafta { font-size: 28px; font-weight: 700; color: #5E5D59; margin: 0 0 6px; }
+.reveal .seri-adim h3 { font-size: 40px; margin: 0 0 8px; }
+.reveal .seri-adim p:last-child { font-size: 30px; margin: 0; color: #5E5D59; }
+
+/* ---------- Sıralı adım kartları ---------- */
+.reveal ol.adim-serisi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; list-style: none; margin: 10px 0 36px; padding: 0; counter-reset: adim; }
+.reveal .adim-serisi li { margin: 0; background: #fff; border-radius: 24px; padding: 32px 36px; counter-increment: adim; font-size: 36px; }
+.adim-serisi li::before { content: counter(adim); display: block; font: 700 96px/1 var(--baslik-font); color: var(--turuncu); margin-bottom: 14px; }
+.reveal .adim-serisi li strong { display: block; font-size: 40px; margin-bottom: 8px; }
+
+/* ---------- Mini sözlük ---------- */
+.sozluk { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 64px; margin: 0; }
+.sozluk div { border-left: 8px solid var(--turuncu); padding-left: 26px; }
+.sozluk dt { font: 700 40px/1.2 var(--baslik-font); }
+.sozluk dd { margin: 8px 0 0; font-size: 33px; line-height: 1.4; }
+
+/* ---------- Tahmin cümlesi (nasıl çalışır) ---------- */
+.tahmin { font-size: 56px; line-height: 1.5; margin: 20px 0 40px; }
+.tahmin .cip { font-size: 48px; margin: 0 6px; }
+
+/* ---------- Claude paneli ---------- */
+.claude-pano { background: #fff; border-radius: 32px; display: flex; align-items: center; justify-content: center; height: 520px; }
+.claude-pano img { width: 300px; height: 300px; }
+
+/* ---------- Küçük açıklama metni ---------- */
+.reveal .kucuk-not { font-size: 26px; color: #5E5D59; }
+.siz-yapin .kucuk-not { color: var(--acik-gri) !important; }
+
+/* Görev kartlarında ikon metinle aynı satırda (dikey yer kazanmak için) */
+.siz-yapin .kart { display: flex; align-items: center; gap: 18px; padding: 24px 30px; }
+.siz-yapin .kart .ikon { display: inline-block; font-size: 52px; margin: 0; flex: none; }
+.reveal .siz-yapin .kart p { font-size: 36px; }
+
+/* Yarısı fotoğraflı slaytta sayaç daha küçük */
+.foto-yan .sayac-ekran { font-size: 120px; }
+/* Seri kartlarında yazılar biraz daha büyük */
+.reveal .seri-adim p:last-child { font-size: 34px; }
+.reveal .seri-adim h3 { font-size: 44px; }

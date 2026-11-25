@@ -3,33 +3,47 @@ import { hazirBekle, hataTopla } from './yardimci.js';
 
 const BASLIKLAR = [
   'Claude ile Tanışma',
+  'Yapay zeka eğitimleri serisi',
   'Bugün ne yapacağız?',
-  'Isınma sorusu 🤔',
+  'Isınma sorusu',
   'Yapay zekayı nerede gördünüz?',
+  'Yapay zeka ve Claude',
+  'Yapay zeka nedir?',
+  'Üretken yapay zeka',
+  'Nasıl çalışır?',
+  'Claude nedir?',
+  'Neler yapabilir, nelere dikkat?',
+  'Boşluğu doldur',
+  'Claude ile tanış',
   '1. Adım: Bilgisayara giriş',
   "2. Adım: Claude'a giriş",
   '3. Adım: Claude ekranını tanı',
   'İlk mesajını gönder',
-  'Claude nedir?',
-  'Neler yapabilir, nelere dikkat?',
-  'Boşluğu doldur ✍️',
+  'İyi soru sormak',
   'İyi istemin formülü',
   'Hangisi daha iyi?',
   'B neden daha iyi?',
   'Farkı kendin gör',
-  'Beğenmedin mi? Sohbete devam et 💬',
+  'Altı altın ipucu',
+  'Bir örnek sohbet',
+  'Beğenmedin mi? Sohbete devam et',
   'Cevabı 2 kez düzelttir',
-  'Formülü tamamla ✍️',
-  'Mola ☕',
+  'Formülü tamamla',
+  'Mola',
+  'Kontrol et, güvenli kullan',
   'Claude da yanılabilir',
-  'Hatayı bul 🔍',
-  "🚫 Claude'a asla yazma",
+  'Hatayı bul',
+  'Nasıl kontrol ederim?',
+  "Claude'a asla yazma",
   "Hangisini Claude'a yazabilirim?",
-  'Kızılay görevi 🚑',
-  'Sonuçlarımızı paylaşalım 🎤',
-  'Çıkış quizi 🏁',
-  'Bugün öğrendiklerimiz ✅',
-  'Teşekkürler! 🙌',
+  'Öğrenmek için kullan',
+  'Öğrendiğini kullan',
+  'Kızılay görevi',
+  'Sonuçlarımızı paylaşalım',
+  'Mini sözlük',
+  'Çıkış quizi',
+  'Bugün öğrendiklerimiz',
+  'Teşekkürler!',
 ];
 
 test.beforeEach(async ({ page }) => {
@@ -37,34 +51,55 @@ test.beforeEach(async ({ page }) => {
   await hazirBekle(page);
 });
 
+const slaytlar = (page) => page.locator('.reveal .slides > section');
+const slaytBaslikla = (page, baslik) =>
+  slaytlar(page).filter({ has: page.locator('h1, h2', { hasText: new RegExp(`^\\s*${baslik.replace(/[?.*+()]/g, '\\$&')}\\s*$`) }) });
+
 test('sunum hatasız açılır, bütün görseller yüklenir', async ({ page }) => {
   const hatalar = hataTopla(page);
   await page.reload();
   await hazirBekle(page);
+  await page.waitForLoadState('load');
   const bozuk = await page.evaluate(() => [...document.images].filter((i) => !i.complete || i.naturalWidth === 0).map((i) => i.src));
   expect(bozuk).toEqual([]);
   expect(hatalar).toEqual([]);
 });
 
-test('tam 28 slayt, başlıklar beklenen sırada', async ({ page }) => {
+test('tam 42 slayt, başlıklar beklenen sırada', async ({ page }) => {
   const basliklar = await page.evaluate(() =>
     [...document.querySelectorAll('.reveal .slides > section')].map((s) => s.querySelector('h1, h2').textContent.trim()));
   expect(basliklar).toEqual(BASLIKLAR);
 });
 
-test('sadece 16, 17 ve 23 numaralı slaytlar atlanabilir olarak işaretli', async ({ page }) => {
+test('beş bölüm açılışı sırayla 1–5 numaralı', async ({ page }) => {
+  const s = await page.evaluate(() =>
+    [...document.querySelectorAll('.reveal .slides > section')]
+      .map((sec, i) => (sec.classList.contains('bolum') ? [i + 1, sec.querySelector('.bolum-no').textContent.trim()] : null))
+      .filter(Boolean));
+  expect(s).toEqual([[6, '1'], [13, '2'], [18, '3'], [29, '4'], [36, '5']]);
+});
+
+test('ilk bölümden sonraki her slayt bir bölüme bağlı (alt köşede görünür)', async ({ page }) => {
+  const bolumsuz = await page.evaluate(() =>
+    [...document.querySelectorAll('.reveal .slides > section')]
+      .map((s, i) => ({ no: i + 1, b: s.getAttribute('data-bolum') }))
+      .filter((x) => x.no >= 6 && x.no <= 41 && !x.b).map((x) => x.no));
+  expect(bolumsuz).toEqual([]);
+});
+
+test('atlanabilir slaytlar: 24, 25, 26 ve 34', async ({ page }) => {
   const atlanabilir = await page.evaluate(() =>
     [...document.querySelectorAll('.reveal .slides > section')]
       .map((s, i) => ({ no: i + 1, not: s.querySelector('aside.notes').textContent.trim() }))
       .filter((x) => x.not.startsWith('⏭ ATLANABİLİR')).map((x) => x.no));
-  expect(atlanabilir).toEqual([16, 17, 23]);
+  expect(atlanabilir).toEqual([24, 25, 26, 34]);
 });
 
-test('"siz yapın" slaytları 8, 15, 17 ve 24', async ({ page }) => {
+test('"siz yapın" slaytları 17, 22, 26 ve 37', async ({ page }) => {
   const nolar = await page.evaluate(() =>
     [...document.querySelectorAll('.reveal .slides > section')]
       .map((s, i) => (s.classList.contains('siz-yapin') ? i + 1 : 0)).filter(Boolean));
-  expect(nolar).toEqual([8, 15, 17, 24]);
+  expect(nolar).toEqual([17, 22, 26, 37]);
 });
 
 test('S tuşu konuşmacı görünümünü açar', async ({ page }) => {
@@ -85,28 +120,29 @@ test('"siz yapın" slaytları koyu zeminli ve sayaçlı', async ({ page }) => {
     [...document.querySelectorAll('.reveal .slides > section.siz-yapin')].map((sec) => ({
       zemin: sec.getAttribute('data-background-color'), sayac: !!sec.querySelector('.sayac[data-sure]'),
     })));
-  expect(s.length).toBeGreaterThanOrEqual(1);
+  expect(s.length).toBe(4);
   for (const x of s) expect(x).toEqual({ zemin: '#141413', sayac: true });
 });
 
-const slayt = (page, no) => page.locator('.reveal .slides > section').nth(no - 1);
-
 test('"istem" kelimesi slaytta (sadece notta değil) açıklanıyor', async ({ page }) => {
-  const metin = await slayt(page, 12).evaluate((s) => [...s.childNodes].filter((n) => n.nodeName !== 'ASIDE').map((n) => n.textContent).join(' '));
+  const metin = await slaytBaslikla(page, 'İyi istemin formülü').evaluate((s) =>
+    [...s.childNodes].filter((n) => n.nodeName !== 'ASIDE').map((n) => n.textContent).join(' '));
   expect(metin).toContain("Claude'a yazdığın mesaj");
 });
 
-test('16–17 atlanırsa 18. slaytın notu öğretilmemiş kısmı sözlü açıklamayı hatırlatır', async ({ page }) => {
-  await expect(slayt(page, 18).locator('aside.notes')).toContainText('16 atlandıysa');
+test('atlanabilir slaytlar atlanırsa "Formülü tamamla" notu sözlü açıklamayı hatırlatır', async ({ page }) => {
+  await expect(slaytBaslikla(page, 'Formülü tamamla').locator('aside.notes')).toContainText('atlandıysa');
 });
 
-test('21. slaytın notu "1923" itirazına hazırlıklı', async ({ page }) => {
-  await expect(slayt(page, 21).locator('aside.notes')).toContainText('Hilal-i Ahmer');
+test('"Hatayı bul" notu "1923" itirazına hazırlıklı', async ({ page }) => {
+  await expect(slaytBaslikla(page, 'Hatayı bul').locator('aside.notes')).toContainText('Hilal-i Ahmer');
 });
 
-test('çıkış quizinde (26) 3. soru düğmelere yapışık değil', async ({ page }) => {
-  await page.evaluate(() => Reveal.slide(25));
-  const bosluk = await slayt(page, 26).locator('.secmeli').evaluate((g) =>
+test('çıkış quizinde soru, düğmelere yapışık değil', async ({ page }) => {
+  const no = (await page.evaluate(() =>
+    [...document.querySelectorAll('.reveal .slides > section')].findIndex((s) => s.querySelector('h2')?.textContent.trim() === 'Çıkış quizi')));
+  await page.evaluate((i) => Reveal.slide(i), no);
+  const bosluk = await slaytlar(page).nth(no).locator('.secmeli').evaluate((g) =>
     g.nextElementSibling.getBoundingClientRect().top - g.getBoundingClientRect().bottom);
   // Görünüm 1920×1080, tuval ölçeği ~0.92; 20 tuval pikseli ≈ 18 ekran pikseli
   expect(bosluk).toBeGreaterThanOrEqual(18);
@@ -116,6 +152,10 @@ test('soru slaytlarında en az bir doğru şık var', async ({ page }) => {
   const dogrusuz = await page.evaluate(() =>
     [...document.querySelectorAll('.secmeli')].filter((g) => !g.querySelector('[data-dogru]')).length);
   expect(dogrusuz).toBe(0);
+});
+
+test('fotoğraf kaynağı son slaytta belirtilmiş', async ({ page }) => {
+  await expect(slaytBaslikla(page, 'Teşekkürler!')).toContainText('genckizilay.org.tr');
 });
 
 for (const [g, y] of [[1920, 1080], [1280, 720], [1024, 768]]) {
