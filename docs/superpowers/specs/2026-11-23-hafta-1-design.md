@@ -38,9 +38,9 @@ Başarı ölçütü: Katılımcıların büyük çoğunluğu Kızılay görevini
 | Hafta | Konu | 4D vurgusu |
 |---|---|---|
 | 1 | Claude ile Tanışma — iyi soru, kontrol, güvenli kullanım | Description, Discernment, Diligence |
-| 2 | Claude ile Yazmak — dilekçe, duyuru, e-posta, özet | Description |
-| 3 | Office + Yapay Zeka — Word/Excel işlerinde Claude | Delegation |
-| 4 | Kod Yazmadan Üretmek — Artifacts ile mini uygulama, Kızılay projesi | Delegation, Diligence |
+| 2 | Excel kullanımı — tablo, formül, sıralama, filtre, grafik | — |
+| 3 | Konu henüz belirlenmedi | — |
+| 4 | Konu henüz belirlenmedi | — |
 
 Çerçeve: Anthropic'in AI Fluency eğitimindeki **4D** (Delegation, Description, Discernment, Diligence).
 
@@ -173,7 +173,7 @@ Her slaytta **konuşmacı notu** bulunur: ne söylenecek, olası öğrenci sorul
 | # | Tür | İçerik |
 |---|---|---|
 | 26 | Seçmeli + boşluk | Çıkış quizi: 3 hızlı soru |
-| 27 | Anlatım | Bugün öğrendiklerimiz · Gelecek hafta: **Claude ile Yazmak** |
+| 27 | Anlatım | Bugün öğrendiklerimiz · Gelecek hafta: **Excel kullanımı** |
 | 28 | Anlatım | Teşekkürler · katılım belgesi bilgisi · siteye götüren karekod |
 
 ## 6. Görsel Kimlik
