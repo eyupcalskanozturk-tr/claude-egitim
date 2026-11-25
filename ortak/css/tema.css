@@ -72,7 +72,7 @@ html, body, .reveal-viewport { background: var(--krem); }
 
 /* ---------- Köşe logosu ve karekod ---------- */
 .kose-logo { position: fixed; top: 20px; right: 28px; height: 72px; width: auto; z-index: 30; }
-.kapak-ekrani .kose-logo { display: none; }
+.kapak-ekrani .kose-logo, .foto-ekrani .kose-logo { display: none; }
 .karekod { width: 320px; height: 320px; background: #fff; padding: 16px; border-radius: 16px; }
 
 /* ---------- Seçmeli soru ---------- */
