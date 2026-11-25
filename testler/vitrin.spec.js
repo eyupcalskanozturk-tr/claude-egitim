@@ -1,7 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
-import { hataTopla } from './yardimci.js';
+import { hataTopla, kontrastOrani } from './yardimci.js';
+
+test('"Yakında" kartlarındaki yazılar beyaz zeminde okunur (≥4.5:1)', async ({ page }) => {
+  await page.goto('./');
+  const renkler = await page.locator('.hafta-karti:not(.aktif) .hafta-no, .hafta-karti:not(.aktif) .hafta-durum')
+    .evaluateAll((els) => els.map((e) => getComputedStyle(e).color));
+  expect(renkler.length).toBe(6);
+  for (const r of renkler) expect(kontrastOrani(r, 'rgb(255, 255, 255)')).toBeGreaterThanOrEqual(4.5);
+});
 
 test('vitrin hatasız açılır, 4 hafta kartı var, Hafta 1 sunuma götürür', async ({ page }) => {
   const hatalar = hataTopla(page);

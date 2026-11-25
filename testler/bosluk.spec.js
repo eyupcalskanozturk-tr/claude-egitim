@@ -16,3 +16,14 @@ test('boşluk kapalıyken cevap görünmez, tıklayınca turuncu görünür, tek
   await b.click();
   await expect(b).toHaveCSS('color', 'rgba(0, 0, 0, 0)');
 });
+
+test('boşluk klavyeyle de açılır: Tab ile odaklanıp Enter', async ({ page }) => {
+  await page.goto('testler/ornek.html#/bosluk');
+  await hazirBekle(page);
+  const b = page.locator('#bosluk .bosluk');
+  await expect(b).toHaveAttribute('tabindex', '0');
+  await b.focus();
+  await page.keyboard.press('Enter');
+  await expect(b).toHaveClass(/acik/);
+  await expect.poll(() => page.evaluate(() => Reveal.getCurrentSlide().id)).toBe('bosluk');
+});

@@ -13,8 +13,16 @@
     kok.querySelectorAll('.bosluk').forEach(function (b) {
       b.textContent = b.dataset.cevap;
       b.setAttribute('role', 'button');
+      b.tabIndex = 0;
       b.addEventListener('click', function () {
         b.classList.toggle('acik');
+      });
+      // Enter açar/kapatır. Space'e bilerek dokunulmaz: reveal'da slayt ilerletir.
+      b.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          b.classList.toggle('acik');
+        }
       });
     });
   }

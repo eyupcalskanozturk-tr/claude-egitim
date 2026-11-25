@@ -89,6 +89,29 @@ test('"siz yapın" slaytları koyu zeminli ve sayaçlı', async ({ page }) => {
   for (const x of s) expect(x).toEqual({ zemin: '#141413', sayac: true });
 });
 
+const slayt = (page, no) => page.locator('.reveal .slides > section').nth(no - 1);
+
+test('"istem" kelimesi slaytta (sadece notta değil) açıklanıyor', async ({ page }) => {
+  const metin = await slayt(page, 12).evaluate((s) => [...s.childNodes].filter((n) => n.nodeName !== 'ASIDE').map((n) => n.textContent).join(' '));
+  expect(metin).toContain("Claude'a yazdığın mesaj");
+});
+
+test('16–17 atlanırsa 18. slaytın notu öğretilmemiş kısmı sözlü açıklamayı hatırlatır', async ({ page }) => {
+  await expect(slayt(page, 18).locator('aside.notes')).toContainText('16 atlandıysa');
+});
+
+test('21. slaytın notu "1923" itirazına hazırlıklı', async ({ page }) => {
+  await expect(slayt(page, 21).locator('aside.notes')).toContainText('Hilal-i Ahmer');
+});
+
+test('çıkış quizinde (26) 3. soru düğmelere yapışık değil', async ({ page }) => {
+  await page.evaluate(() => Reveal.slide(25));
+  const bosluk = await slayt(page, 26).locator('.secmeli').evaluate((g) =>
+    g.nextElementSibling.getBoundingClientRect().top - g.getBoundingClientRect().bottom);
+  // Görünüm 1920×1080, tuval ölçeği ~0.92; 20 tuval pikseli ≈ 18 ekran pikseli
+  expect(bosluk).toBeGreaterThanOrEqual(18);
+});
+
 test('soru slaytlarında en az bir doğru şık var', async ({ page }) => {
   const dogrusuz = await page.evaluate(() =>
     [...document.querySelectorAll('.secmeli')].filter((g) => !g.querySelector('[data-dogru]')).length);
