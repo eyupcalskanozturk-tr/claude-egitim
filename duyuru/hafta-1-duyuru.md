@@ -14,14 +14,14 @@
 Yapay zekayı merak ediyor ama nereden başlayacağını bilmiyor musun?
 Gel, bilgisayarın başında birlikte öğrenelim.
 
-📅 **1 Aralık Salı** · 🕐 **[saat]**
+📅 **1 Aralık Salı** · 🕐 **15.30**
 📍 **Teknik Bilimler MYO · Lab3**
 👥 **35 kişilik kontenjan** · 🎓 **Katılım belgesi verilecek**
 
 ✅ Önceden **claude.ai** hesabını aç
 ✅ Lab bilgisayarına girişte istenen **UBYS şifreni** bil
 
-Kayıt: **[kayıt formu bağlantısı / karekod]**
+Kayıt: **https://forms.gle/gW2JJUYM1pT81xBE6**
 
 ---
 
@@ -40,7 +40,7 @@ Bu eğitimde dinlemekten çok **yapacağız**. Herkesin önünde bir bilgisayar 
 
 Daha önce hiç yapay zeka kullanmadıysan ya da bilgisayarla aran pek iyi değilse **tam sana göre**. Adım adım ilerleyeceğiz.
 
-📅 1 Aralık Salı · 🕐 [saat]
+📅 1 Aralık Salı · 🕐 15.30
 📍 Teknik Bilimler MYO, Lab3
 👥 Kontenjan 35 kişi
 🎓 Katılım belgesi verilecek
@@ -49,7 +49,7 @@ Daha önce hiç yapay zeka kullanmadıysan ya da bilgisayarla aran pek iyi deği
 1️⃣ **claude.ai hesabını aç.** Nasıl yapılacağı aşağıdaki rehberde.
 2️⃣ Lab bilgisayarlarına **TC kimlik numaran ve UBYS şifrenle** giriş yapılıyor. Şifreni hatırlamıyorsan derse gelmeden UBYS'den sıfırla.
 
-📝 Kayıt: [kayıt formu bağlantısı]
+📝 Kayıt: https://forms.gle/gW2JJUYM1pT81xBE6
 
 ---
 
@@ -71,7 +71,7 @@ Daha önce hiç yapay zeka kullanmadıysan ya da bilgisayarla aran pek iyi deği
 
 👋 Merhaba! **Yarın** "Claude ile Tanışma" eğitimimiz var.
 
-📅 1 Aralık Salı · 🕐 [saat]
+📅 1 Aralık Salı · 🕐 15.30
 📍 Teknik Bilimler MYO, Lab3
 
 Gelmeden önce son kontrol:

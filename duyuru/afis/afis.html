@@ -76,13 +76,14 @@
     /* ---------- Alt bant ---------- */
     .bant { position: relative; z-index: 2; margin: 0 -64px; background: var(--koyu); color: var(--krem-acik); padding: 30px 64px 36px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
     .bant h2 { font-family: var(--baslik); font-weight: 600; font-size: 28px; color: var(--turuncu); margin-bottom: 10px; }
-    .bant ul { list-style: none; display: flex; gap: 30px; }
+    .bant ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
     .bant li { display: flex; align-items: center; gap: 10px; font-size: 24px; }
     .bant li i { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--turuncu); position: relative; flex: none; }
     .bant li i::after { content: ""; position: absolute; inset: 4px; background: var(--turuncu); -webkit-mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; }
-    .kayit { flex: none; text-align: right; }
-    .kayit b { display: block; font-size: 28px; font-weight: 700; }
-    .kayit span { font-size: 21px; color: #BDBBB3; }
+    .kayit { flex: none; display: flex; align-items: center; gap: 20px; }
+    .kayit .karekod { width: 132px; height: 132px; background: #fff; padding: 10px; border-radius: 14px; flex: none; }
+    .kayit b { display: block; font-size: 30px; font-weight: 700; color: #fff; }
+    .kayit span { display: block; font-size: 18px; color: #BDBBB3; max-width: 230px; line-height: 1.35; margin-top: 4px; }
 
     /* ---------- Hikâye (9:16) ---------- */
     body.hikaye .kahraman { margin-top: 56px; }
@@ -100,8 +101,10 @@
     body.hikaye .pano b { font-size: 48px; }
     body.hikaye .pano div { padding: 22px 26px 20px; }
     body.hikaye .pano span { font-size: 22px; }
-    body.hikaye .bant { padding: 44px 64px 60px; flex-direction: column; align-items: flex-start; }
-    body.hikaye .kayit { text-align: left; }
+    body.hikaye .bant { padding: 40px 64px 52px; }
+    body.hikaye .bant ul { flex-direction: column; gap: 6px; }
+    body.hikaye .kayit .karekod { width: 170px; height: 170px; }
+    body.hikaye .kayit span { max-width: 220px; font-size: 19px; }
   </style>
 </head>
 <body>
@@ -149,7 +152,10 @@
           <li><i></i>UBYS şifreni hatırla</li>
         </ul>
       </div>
-      <div class="kayit"><b>Kayıt bağlantısı</b><span>profilimizde</span></div>
+      <div class="kayit">
+        <img class="karekod" src="kayit-karekod.svg" alt="Kayıt formu karekodu">
+        <div><b>Kayıt formu</b><span>Karekodu telefonunla okut</span></div>
+      </div>
     </footer>
   </div>
   <script>if (location.hash === '#hikaye') document.body.classList.add('hikaye');</script>
