@@ -17,8 +17,8 @@ test('yazı tipleri yerelden yüklenir, Türkçe karakter için latin-ext dahil'
       .filter((f) => f.status === 'loaded')
       .map((f) => ({ aile: f.family.replace(/["']/g, ''), aralik: f.unicodeRange }));
   });
-  const inter = yuklu.filter((f) => f.aile === 'Inter');
+  const govde = yuklu.filter((f) => f.aile === 'Plus Jakarta Sans');
   const aralik = (f) => f.aralik.toUpperCase();
-  expect(inter.some((f) => aralik(f).includes('U+100-2BA') || aralik(f).includes('U+0100-02BA'))).toBe(true);
-  expect(yuklu.some((f) => f.aile === 'Poppins')).toBe(true);
+  expect(govde.some((f) => aralik(f).includes('U+100-2BA') || aralik(f).includes('U+0100-02BA'))).toBe(true);
+  expect(yuklu.some((f) => f.aile === 'Fraunces')).toBe(true);
 });

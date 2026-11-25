@@ -29,11 +29,10 @@ const BASLIKLAR = [
   'Beğenmedin mi? Sohbete devam et',
   'Cevabı 2 kez düzelttir',
   'Formülü tamamla',
-  'Mola',
   'Kontrol et, güvenli kullan',
   'Claude da yanılabilir',
   'Hatayı bul',
-  'Nasıl kontrol ederim?',
+  'Cevabı nasıl kontrol ederim?',
   "Claude'a asla yazma",
   "Hangisini Claude'a yazabilirim?",
   'Öğrenmek için kullan',
@@ -65,7 +64,7 @@ test('sunum hatasız açılır, bütün görseller yüklenir', async ({ page }) 
   expect(hatalar).toEqual([]);
 });
 
-test('tam 42 slayt, başlıklar beklenen sırada', async ({ page }) => {
+test('tam 41 slayt (mola slaydı yok), başlıklar beklenen sırada', async ({ page }) => {
   const basliklar = await page.evaluate(() =>
     [...document.querySelectorAll('.reveal .slides > section')].map((s) => s.querySelector('h1, h2').textContent.trim()));
   expect(basliklar).toEqual(BASLIKLAR);
@@ -76,30 +75,30 @@ test('beş bölüm açılışı sırayla 1–5 numaralı', async ({ page }) => {
     [...document.querySelectorAll('.reveal .slides > section')]
       .map((sec, i) => (sec.classList.contains('bolum') ? [i + 1, sec.querySelector('.bolum-no').textContent.trim()] : null))
       .filter(Boolean));
-  expect(s).toEqual([[6, '1'], [13, '2'], [18, '3'], [29, '4'], [36, '5']]);
+  expect(s).toEqual([[6, '1'], [13, '2'], [18, '3'], [28, '4'], [35, '5']]);
 });
 
 test('ilk bölümden sonraki her slayt bir bölüme bağlı (alt köşede görünür)', async ({ page }) => {
   const bolumsuz = await page.evaluate(() =>
     [...document.querySelectorAll('.reveal .slides > section')]
       .map((s, i) => ({ no: i + 1, b: s.getAttribute('data-bolum') }))
-      .filter((x) => x.no >= 6 && x.no <= 41 && !x.b).map((x) => x.no));
+      .filter((x) => x.no >= 6 && x.no <= 40 && !x.b).map((x) => x.no));
   expect(bolumsuz).toEqual([]);
 });
 
-test('atlanabilir slaytlar: 24, 25, 26 ve 34', async ({ page }) => {
+test('atlanabilir slaytlar: 24, 25, 26 ve 33', async ({ page }) => {
   const atlanabilir = await page.evaluate(() =>
     [...document.querySelectorAll('.reveal .slides > section')]
       .map((s, i) => ({ no: i + 1, not: s.querySelector('aside.notes').textContent.trim() }))
       .filter((x) => x.not.startsWith('⏭ ATLANABİLİR')).map((x) => x.no));
-  expect(atlanabilir).toEqual([24, 25, 26, 34]);
+  expect(atlanabilir).toEqual([24, 25, 26, 33]);
 });
 
-test('"siz yapın" slaytları 17, 22, 26 ve 37', async ({ page }) => {
+test('"siz yapın" slaytları 17, 22, 26 ve 36', async ({ page }) => {
   const nolar = await page.evaluate(() =>
     [...document.querySelectorAll('.reveal .slides > section')]
       .map((s, i) => (s.classList.contains('siz-yapin') ? i + 1 : 0)).filter(Boolean));
-  expect(nolar).toEqual([17, 22, 26, 37]);
+  expect(nolar).toEqual([17, 22, 26, 36]);
 });
 
 test('S tuşu konuşmacı görünümünü açar', async ({ page }) => {
@@ -115,13 +114,27 @@ test('her slaytta boş olmayan konuşmacı notu var', async ({ page }) => {
   expect(notsuz).toEqual([]);
 });
 
-test('"siz yapın" slaytları koyu zeminli ve sayaçlı', async ({ page }) => {
+test('"siz yapın" ve bölüm slaytları gece zeminli; etkinlikler sayaçlı', async ({ page }) => {
   const s = await page.evaluate(() =>
-    [...document.querySelectorAll('.reveal .slides > section.siz-yapin')].map((sec) => ({
-      zemin: sec.getAttribute('data-background-color'), sayac: !!sec.querySelector('.sayac[data-sure]'),
+    [...document.querySelectorAll('.reveal .slides > section.siz-yapin, .reveal .slides > section.bolum')].map((sec) => ({
+      gece: sec.getAttribute('data-background-color') === '#0D0F1A' && (sec.getAttribute('data-background-gradient') || '').includes('radial-gradient'),
+      sayac: sec.classList.contains('bolum') || !!sec.querySelector('.sayac[data-sure]'),
     })));
-  expect(s.length).toBe(4);
-  for (const x of s) expect(x).toEqual({ zemin: '#141413', sayac: true });
+  expect(s.length).toBe(9);
+  for (const x of s) expect(x).toEqual({ gece: true, sayac: true });
+});
+
+test('kapakta üç logo: Genç Kızılay, ÇOMÜ, Teknik Bilimler MYO', async ({ page }) => {
+  const kaynaklar = await slaytlar(page).first().locator('.logolar img').evaluateAll((im) => im.map((i) => i.getAttribute('src').split('/').pop()));
+  expect(kaynaklar).toEqual(['genc-kizilay.png', 'comu.png', 'tbmyo.png']);
+});
+
+test('slaytlarda görünen metin zengin: en az 1600 kelime (notlar hariç)', async ({ page }) => {
+  const toplam = await page.evaluate(() => [...document.querySelectorAll('.reveal .slides > section')].reduce((t, s) => {
+    const k = s.cloneNode(true); k.querySelectorAll('aside.notes').forEach((a) => a.remove());
+    return t + k.textContent.split(/\s+/).filter(Boolean).length;
+  }, 0));
+  expect(toplam).toBeGreaterThanOrEqual(1600);
 });
 
 test('"istem" kelimesi slaytta (sadece notta değil) açıklanıyor', async ({ page }) => {

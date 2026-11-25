@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { hazirBekle } from './yardimci.js';
 
-const KOYU = 'rgb(20, 20, 19)';
+const GECE = 'rgb(13, 15, 26)';
+const BEYAZ = 'rgb(245, 243, 238)';
 const TURUNCU = 'rgb(217, 119, 87)';
 
 async function git(page, id) {
@@ -9,7 +10,7 @@ async function git(page, id) {
   await hazirBekle(page);
 }
 
-test('bölüm açılışı: turuncu zemin, koyu çizgisiz başlık, dev numara', async ({ page }) => {
+test('bölüm açılışı: gece zemini, açık renk çizgisiz başlık, dev numara', async ({ page }) => {
   await git(page, 'bolum');
   const s = await page.evaluate(() => {
     const bg = document.querySelector('.backgrounds .slide-background.present');
@@ -21,8 +22,8 @@ test('bölüm açılışı: turuncu zemin, koyu çizgisiz başlık, dev numara',
       no: parseFloat(getComputedStyle(document.querySelector('#bolum .bolum-no')).fontSize),
     };
   });
-  expect(s.zeminler).toContain(TURUNCU);
-  expect(s.baslikRenk).toBe(KOYU);
+  expect(s.zeminler).toContain(GECE);
+  expect(s.baslikRenk).toBe(BEYAZ);
   expect(s.cizgi).toBe('none');
   expect(s.no).toBeGreaterThanOrEqual(200);
 });

@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, rmSync } from 'node:fs';
+import { cpSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 
 const nm = 'node_modules';
 const reveal = 'ortak/vendor/reveal';
@@ -11,17 +11,31 @@ for (const dosya of ['reveal.js', 'reveal.css', 'reset.css']) {
 cpSync(`${nm}/reveal.js/plugin/notes`, `${reveal}/plugin/notes`, { recursive: true });
 cpSync(`${nm}/reveal.js/LICENSE`, `${reveal}/LICENSE`);
 
+// Yazı tipleri (@fontsource, OFL) — latin + latin-ext (Türkçe karakterler)
+rmSync('ortak/fonts', { recursive: true, force: true });
 mkdirSync('ortak/fonts', { recursive: true });
-const fontlar = [
-  ['inter', 'latin', 400], ['inter', 'latin-ext', 400],
-  ['inter', 'latin', 700], ['inter', 'latin-ext', 700],
-  ['poppins', 'latin', 700], ['poppins', 'latin-ext', 700],
+const ARALIK = {
+  latin: 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD',
+  'latin-ext': 'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF',
+};
+const aileler = [
+  ['fraunces', 'Fraunces', [600, 700]],
+  ['plus-jakarta-sans', 'Plus Jakarta Sans', [400, 600, 700]],
+  ['caveat', 'Caveat', [700]],
 ];
-for (const [aile, alt, agirlik] of fontlar) {
-  const ad = `${aile}-${alt}-${agirlik}-normal.woff2`;
-  cpSync(`${nm}/@fontsource/${aile}/files/${ad}`, `ortak/fonts/${ad}`);
+let css = '/* scripts/vendor.mjs tarafından üretilir, elle düzenlemeyin. Kaynak: @fontsource (OFL). */\n';
+for (const [paket, ad, agirliklar] of aileler) {
+  for (const agirlik of agirliklar) {
+    for (const alt of ['latin-ext', 'latin']) {
+      const dosya = `${paket}-${alt}-${agirlik}-normal.woff2`;
+      cpSync(`${nm}/@fontsource/${paket}/files/${dosya}`, `ortak/fonts/${dosya}`);
+      css += `@font-face { font-family: '${ad}'; font-style: normal; font-weight: ${agirlik}; font-display: swap; src: url(../fonts/${dosya}) format('woff2'); unicode-range: ${ARALIK[alt]}; }\n`;
+    }
+  }
 }
-// Lucide ikonları (MIT) — sadece kullanılanlar
+writeFileSync('ortak/css/fontlar.css', css);
+
+// Lucide ikonları (ISC) — sadece kullanılanlar
 const ikonlar = [
   'brain', 'sparkles', 'message-circle', 'message-square-text', 'languages', 'map', 'navigation', 'smartphone',
   'image', 'file-text', 'list-checks', 'lightbulb', 'users', 'target', 'palette', 'search', 'search-check',
