@@ -221,3 +221,15 @@ html, body, .reveal-viewport {
 @media (prefers-reduced-motion: reduce) {
   .sik, .sik.yanlis, .sayac.bitti .sayac-ekran { animation: none; transition: none; }
 }
+
+/* ---------- Ek düzenler (uzun atölye sürümü) ---------- */
+.seri.bes { grid-template-columns: repeat(5, 1fr); gap: 28px; }
+.seri.bes .seri-adim h3 { font-size: 56px; }
+.reveal .seri.bes .seri-adim p:last-child { font-size: 30px; }
+.reveal .slides > section.siz-yapin ol { margin-bottom: 22px; }
+.reveal .slides > section.siz-yapin li { font-size: 36px; margin-top: 6px; }
+.reveal .slides > section.siz-yapin .not-kutusu { font-size: 32px; padding: 18px 30px; }
+.siz-yapin .iki-sutun { gap: 44px; }
+.siz-yapin .iki-sutun .istem { margin-bottom: 0; }
+.reveal .slides > section.siz-yapin .sayac-ekran { font-size: 120px; }
+.siz-yapin .kartlar { margin-bottom: 26px; gap: 32px; }
