@@ -1,6 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
-  <rect width="1600" height="1000" fill="#E8E6DC"/>
-  <rect x="24" y="24" width="1552" height="952" fill="none" stroke="#B0AEA5" stroke-width="8" stroke-dasharray="32 20"/>
-  <text x="800" y="470" font-family="sans-serif" font-size="72" font-weight="700" fill="#141413" text-anchor="middle">cportal giriş ekranı</text>
-  <text x="800" y="570" font-family="sans-serif" font-size="44" fill="#141413" text-anchor="middle">Ekran görüntüsü buraya gelecek</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" font-family="Segoe UI, Arial, sans-serif">
+  <title>Temsili görünüm: kampüs ağı giriş sayfası</title>
+  <!-- Tarayıcı çerçevesi -->
+  <rect x="0" y="0" width="1600" height="1000" rx="28" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1600" height="96" rx="28" fill="#E8E6DC"/>
+  <rect x="0" y="60" width="1600" height="36" fill="#E8E6DC"/>
+  <circle cx="48" cy="48" r="12" fill="#B0AEA5"/><circle cx="88" cy="48" r="12" fill="#B0AEA5"/><circle cx="128" cy="48" r="12" fill="#B0AEA5"/>
+  <rect x="190" y="22" width="1200" height="52" rx="26" fill="#FFFFFF"/>
+  <text x="230" y="58" font-size="28" fill="#5E5D59">🔒  Kampüs ağı giriş sayfası</text>
+  <!-- Giriş kartı -->
+  <rect x="440" y="170" width="720" height="740" rx="32" fill="#FAF9F5" stroke="#E8E6DC" stroke-width="4"/>
+  <circle cx="800" cy="270" r="54" fill="#1F3A6E"/>
+  <text x="800" y="288" font-size="44" font-weight="700" fill="#FFFFFF" text-anchor="middle">Ç</text>
+  <text x="800" y="380" font-size="44" font-weight="700" fill="#141413" text-anchor="middle">Ağa Giriş</text>
+  <text x="520" y="460" font-size="28" fill="#5E5D59">TC Kimlik No</text>
+  <rect x="520" y="478" width="560" height="76" rx="14" fill="#FFFFFF" stroke="#B0AEA5" stroke-width="3"/>
+  <text x="548" y="528" font-size="30" fill="#B0AEA5">11 haneli numaran</text>
+  <text x="520" y="610" font-size="28" fill="#5E5D59">UBYS Şifresi</text>
+  <rect x="520" y="628" width="560" height="76" rx="14" fill="#FFFFFF" stroke="#B0AEA5" stroke-width="3"/>
+  <text x="548" y="678" font-size="34" fill="#B0AEA5">••••••••</text>
+  <rect x="520" y="752" width="560" height="84" rx="16" fill="#1F3A6E"/>
+  <text x="800" y="806" font-size="34" font-weight="700" fill="#FFFFFF" text-anchor="middle">Giriş</text>
+  <text x="1560" y="970" font-size="26" fill="#5E5D59" text-anchor="end">Temsili görünüm</text>
 </svg>

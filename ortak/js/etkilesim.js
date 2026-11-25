@@ -1,4 +1,26 @@
 (function () {
+  // ikonlar/ klasörü bu betiğe göreli bulunur (sayfanın derinliğinden bağımsız).
+  var betik = document.currentScript && document.currentScript.src;
+  var ikonKoku = betik ? betik.replace(/js\/etkilesim\.js.*$/, 'ikonlar/') : 'ortak/ikonlar/';
+
+  function ikonKur(kok) {
+    kok.querySelectorAll('[data-ikon]').forEach(function (el) {
+      el.style.setProperty('--ikon', 'url("' + ikonKoku + el.getAttribute('data-ikon') + '.svg")');
+      el.setAttribute('aria-hidden', 'true');
+    });
+  }
+
+  function bolumIziKur() {
+    var iz = document.querySelector('.bolum-izi');
+    if (!iz || !window.Reveal) return;
+    function guncelle() {
+      var s = Reveal.getCurrentSlide();
+      iz.textContent = (s && !s.classList.contains('bolum') && s.getAttribute('data-bolum')) || '';
+    }
+    Reveal.on('slidechanged', guncelle);
+    guncelle();
+  }
+
   function secmeliKur(kok) {
     kok.querySelectorAll('.secmeli .sik').forEach(function (sik) {
       sik.type = 'button';
@@ -91,6 +113,8 @@
     secmeliKur(kok);
     boslukKur(kok);
     kok.querySelectorAll('.sayac').forEach(sayacKur);
+    ikonKur(kok);
+    bolumIziKur();
   }
 
   window.Etkilesim = { kur: kur, sureBicimle: sureBicimle };

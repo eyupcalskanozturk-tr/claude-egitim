@@ -13,6 +13,7 @@
     "@fontsource/poppins": "5.2.6",
     "@playwright/test": "1.55.0",
     "http-server": "14.1.1",
+    "lucide-static": "0.460.0",
     "qrcode": "1.5.4",
     "reveal.js": "5.2.1"
   }

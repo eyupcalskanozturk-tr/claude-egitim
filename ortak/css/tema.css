@@ -96,3 +96,49 @@ html, body, .reveal-viewport { background: var(--krem); }
 .sayac.bitti .sayac-ekran { animation: nabiz 1s infinite; }
 .sayac-dugme { font: 700 32px var(--govde-font); padding: 16px 32px; border-radius: 16px; border: 3px solid var(--turuncu); background: transparent; color: inherit; cursor: pointer; }
 @keyframes nabiz { 50% { opacity: 0.35; } }
+
+/* ---------- İlerleme çubuğu ---------- */
+.reveal .progress { height: 6px; color: var(--turuncu); }
+.reveal .progress span { background: var(--turuncu); }
+
+/* ---------- Bölüm açılışı (turuncu zemin, krem yıldız) ---------- */
+.reveal .slides > section.bolum {
+  height: 100%;
+  padding-top: 110px;
+  background: url(../../gorseller/yildiz-krem.svg) no-repeat calc(100% + 300px) 50% / 1050px;
+}
+.reveal .bolum-no { font: 700 300px/1 var(--baslik-font); color: var(--koyu); margin: 0 0 10px; letter-spacing: -0.04em; }
+.reveal .slides > section.bolum h2 { border: 0; padding: 0; font-size: 100px; color: var(--koyu); margin: 0 0 24px; max-width: 1150px; }
+.reveal .bolum-aciklama { font-size: 44px; max-width: 1000px; color: var(--koyu); }
+
+/* ---------- Sohbet balonları ---------- */
+.sohbet { display: flex; flex-direction: column; gap: 24px; }
+.reveal .slides > section .balon { max-width: 78%; margin: 0; padding: 24px 36px; border-radius: 28px; font-size: 36px; line-height: 1.4; color: var(--koyu); }
+.reveal .slides > section .balon.sen { align-self: flex-end; background: var(--acik-gri); border-bottom-right-radius: 8px; }
+.reveal .slides > section .balon.claude { align-self: flex-start; position: relative; background: #fff; border: 3px solid var(--acik-gri); border-bottom-left-radius: 8px; padding-left: 104px; }
+.balon.claude::before { content: ""; position: absolute; left: 32px; top: 28px; width: 50px; height: 50px; background: url(../../gorseller/logolar/claude.svg) center / contain no-repeat; }
+.balon ul, .balon ol { margin-bottom: 0; }
+.reveal .balon li { font-size: 34px; }
+
+/* ---------- İkonlar (Lucide, maske ile renklenir) ---------- */
+.ikon { display: inline-block; width: 1em; height: 1em; background: currentColor; -webkit-mask: var(--ikon) center / contain no-repeat; mask: var(--ikon) center / contain no-repeat; vertical-align: -0.14em; }
+.ikon-liste { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 64px; }
+.ikon-liste.uclu { grid-template-columns: repeat(3, 1fr); }
+.ikon-madde { display: flex; gap: 28px; align-items: flex-start; }
+.ikon-madde .ikon { font-size: 68px; color: var(--turuncu); flex: none; }
+.reveal .ikon-madde p { margin: 0; }
+.reveal .ikon-madde h3 { margin: 0 0 6px; font-size: 40px; }
+.kart .ikon { font-size: 60px; color: var(--turuncu); display: block; margin-bottom: 14px; }
+
+/* ---------- Yarısı fotoğraflı slayt ---------- */
+.reveal .slides > section.foto-yan { height: 100%; }
+.foto-yan .metin { width: 46%; }
+.yan-foto { position: absolute; top: 0; right: 0; width: 48%; height: 100%; object-fit: cover; }
+.foto-kaynak { position: absolute; right: 16px; bottom: 12px; font-size: 18px; color: #fff; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
+
+/* ---------- Alt köşe: hangi bölümdeyiz ---------- */
+.bolum-izi { position: fixed; left: 24px; bottom: 16px; z-index: 30; font: 600 18px var(--govde-font); color: #5E5D59; background: rgba(250, 249, 245, 0.9); padding: 4px 14px; border-radius: 999px; }
+.bolum-izi:empty { display: none; }
+
+/* ---------- Ekran üzerindeki numaralı işaretler ---------- */
+.isaret { position: absolute; width: 64px; height: 64px; border-radius: 50%; background: var(--turuncu); color: #fff; font: 700 36px/64px var(--baslik-font); text-align: center; transform: translate(-50%, -50%); box-shadow: 0 0 0 6px rgba(250, 249, 245, 0.9); }

@@ -1,6 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
-  <rect width="1600" height="1000" fill="#E8E6DC"/>
-  <rect x="24" y="24" width="1552" height="952" fill="none" stroke="#B0AEA5" stroke-width="8" stroke-dasharray="32 20"/>
-  <text x="800" y="470" font-family="sans-serif" font-size="72" font-weight="700" fill="#141413" text-anchor="middle">claude.ai giriş sayfası</text>
-  <text x="800" y="570" font-family="sans-serif" font-size="44" fill="#141413" text-anchor="middle">Ekran görüntüsü buraya gelecek</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" font-family="Segoe UI, Arial, sans-serif">
+  <title>Temsili görünüm: claude.ai giriş sayfası</title>
+  <rect x="0" y="0" width="1600" height="1000" rx="28" fill="#FAF9F5"/>
+  <rect x="0" y="0" width="1600" height="96" rx="28" fill="#E8E6DC"/>
+  <rect x="0" y="60" width="1600" height="36" fill="#E8E6DC"/>
+  <circle cx="48" cy="48" r="12" fill="#B0AEA5"/><circle cx="88" cy="48" r="12" fill="#B0AEA5"/><circle cx="128" cy="48" r="12" fill="#B0AEA5"/>
+  <rect x="190" y="22" width="1200" height="52" rx="26" fill="#FFFFFF"/>
+  <text x="230" y="58" font-size="30" fill="#141413">claude.ai</text>
+  <!-- Claude yıldızı (basitleştirilmiş) -->
+  <g transform="translate(800 230)" fill="#D97757">
+    <rect x="-8" y="-60" width="16" height="120" rx="8"/>
+    <rect x="-8" y="-60" width="16" height="120" rx="8" transform="rotate(30)"/>
+    <rect x="-8" y="-60" width="16" height="120" rx="8" transform="rotate(60)"/>
+    <rect x="-8" y="-60" width="16" height="120" rx="8" transform="rotate(90)"/>
+    <rect x="-8" y="-60" width="16" height="120" rx="8" transform="rotate(120)"/>
+    <rect x="-8" y="-60" width="16" height="120" rx="8" transform="rotate(150)"/>
+  </g>
+  <text x="800" y="380" font-size="52" font-weight="700" fill="#141413" text-anchor="middle">Claude'a hoş geldin</text>
+  <!-- Google ile devam -->
+  <rect x="500" y="450" width="600" height="92" rx="46" fill="#FFFFFF" stroke="#B0AEA5" stroke-width="3"/>
+  <circle cx="570" cy="496" r="24" fill="none" stroke="#4285F4" stroke-width="8"/>
+  <text x="830" y="508" font-size="34" font-weight="600" fill="#141413" text-anchor="middle">Google ile devam et</text>
+  <!-- veya -->
+  <line x1="500" y1="600" x2="760" y2="600" stroke="#B0AEA5" stroke-width="3"/>
+  <text x="800" y="610" font-size="28" fill="#5E5D59" text-anchor="middle">veya</text>
+  <line x1="840" y1="600" x2="1100" y2="600" stroke="#B0AEA5" stroke-width="3"/>
+  <!-- E-posta -->
+  <rect x="500" y="650" width="600" height="84" rx="16" fill="#FFFFFF" stroke="#B0AEA5" stroke-width="3"/>
+  <text x="532" y="704" font-size="30" fill="#B0AEA5">E-posta adresin</text>
+  <rect x="500" y="756" width="600" height="84" rx="42" fill="#141413"/>
+  <text x="800" y="810" font-size="32" font-weight="600" fill="#FAF9F5" text-anchor="middle">E-posta ile devam et</text>
+  <text x="1560" y="970" font-size="26" fill="#5E5D59" text-anchor="end">Temsili görünüm</text>
 </svg>
