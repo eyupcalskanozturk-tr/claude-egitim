@@ -14,6 +14,7 @@
       --cizgi: #DDDACE;
       --turuncu: #D97757;
       --turuncu-koyu: #C15F3C;
+      --kizilay: #E11B22;
       --baslik: 'Fraunces', Georgia, serif;
       --govde: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
     }
@@ -30,21 +31,21 @@
     body.hikaye .afis { height: 1920px; }
 
     /* ---------- Logo şeridi ---------- */
-    .logolar { position: relative; z-index: 3; display: flex; align-items: center; gap: 28px; background: #fff; border-radius: 28px; padding: 18px 30px; box-shadow: 0 2px 0 var(--cizgi); }
+    .logolar { position: relative; z-index: 3; display: flex; align-items: center; gap: 28px; background: #fff; border-radius: 28px; padding: 18px 30px; box-shadow: 0 2px 0 var(--cizgi); border-top: 8px solid var(--kizilay); }
     .logolar img { height: 118px; width: auto; display: block; }
     .logolar p { flex: 1; align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: 6px; text-align: center; border-left: 2px solid var(--cizgi); border-right: 2px solid var(--cizgi); padding: 0 18px; }
     .logolar p strong { font-size: 26px; font-weight: 700; line-height: 1.25; }
-    .logolar p span { color: var(--turuncu-koyu); font-size: 23px; font-weight: 600; line-height: 1.25; }
+    .logolar p span { color: var(--kizilay); font-size: 23px; font-weight: 600; line-height: 1.25; }
 
     /* ---------- Kahraman alanı ---------- */
     .kahraman { position: relative; z-index: 2; margin-top: 64px; }
-    .ust { display: inline-flex; align-items: center; gap: 14px; font-size: 27px; font-weight: 700; color: var(--turuncu-koyu); margin-bottom: 20px; }
-    .ust::before { content: ""; width: 42px; height: 5px; border-radius: 3px; background: var(--turuncu); }
+    .ust { display: inline-flex; align-items: center; gap: 14px; font-size: 27px; font-weight: 700; color: var(--kizilay); margin-bottom: 20px; }
+    .ust::before { content: ""; width: 42px; height: 5px; border-radius: 3px; background: var(--kizilay); }
     h1 { font-family: var(--baslik); font-weight: 700; font-size: 128px; line-height: 0.95; letter-spacing: -0.035em; }
     .alt { font-size: 30px; line-height: 1.45; color: #3D3D3A; max-width: 520px; margin-top: 28px; }
     .ozellik { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 12px; width: max-content; }
     .ozellik li { display: flex; align-items: center; gap: 14px; font-size: 25px; font-weight: 600; }
-    .ozellik li i { width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--turuncu); position: relative; }
+    .ozellik li i { width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--kizilay); position: relative; }
     .ozellik li i::after { content: ""; position: absolute; inset: 8px; background: #fff; -webkit-mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; }
 
     /* ---------- Claude yıldızı ve sohbet kartı ---------- */
@@ -88,7 +89,7 @@
     body.hikaye h1 { font-size: 140px; }
     body.hikaye .alt { font-size: 34px; max-width: 640px; }
     body.hikaye .yildiz { width: 600px; height: 600px; right: -320px; top: 380px; }
-    body.hikaye .sohbet { position: relative; top: auto; right: auto; align-self: flex-start; margin-top: 40px; margin-left: 8px; width: 660px; transform: rotate(-1.5deg); padding: 26px 30px 30px; }
+    body.hikaye .sohbet { position: relative; top: auto; right: auto; align-self: flex-start; margin-top: 26px; margin-left: 8px; width: 660px; transform: rotate(-1.5deg); padding: 26px 30px 30px; }
     body.hikaye .sohbet-ust { font-size: 22px; }
     body.hikaye .balon-sen, body.hikaye .balon-claude p { font-size: 21px; }
     body.hikaye .balon-sen { margin-left: 90px; }
@@ -126,10 +127,10 @@
 
     <div class="sohbet" aria-hidden="true">
       <div class="sohbet-ust"><img src="../../gorseller/logolar/claude.svg" alt="">Claude</div>
-      <p class="balon-sen">Genç Kızılay için kan bağışı günü duyurusu yaz. 3 cümle, samimi olsun.</p>
+      <p class="balon-sen">Yapay zekayı bana 2 cümlede, hiç bilmeyen birine anlatır gibi açıkla.</p>
       <div class="balon-claude">
         <img src="../../gorseller/logolar/claude.svg" alt="">
-        <p>Bir ünite kan, üç hayat demek! Bu salı kampüste kurulacak bağış noktamızda seni de görmek istiyoruz.<span class="imlec"></span></p>
+        <p>Yapay zeka, çok sayıda örnekten öğrenip tahmin yapan bir bilgisayar sistemidir. En iyi öğrenme yolu ise denemek: ilk sorunu sen sor!<span class="imlec"></span></p>
       </div>
     </div>
 
