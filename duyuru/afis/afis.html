@@ -11,65 +11,96 @@
       --krem-acik: #FAF9F5;
       --koyu: #141413;
       --gri: #6B6A63;
-      --cizgi: #D9D6CA;
+      --cizgi: #DDDACE;
       --turuncu: #D97757;
       --turuncu-koyu: #C15F3C;
       --baslik: 'Fraunces', Georgia, serif;
       --govde: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
-      --G: 1080px;
-      --Y: 1350px;
     }
-    body.hikaye { --Y: 1920px; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: #777; font-family: var(--govde); color: var(--koyu); }
-    .afis { width: var(--G); height: var(--Y); position: relative; overflow: hidden; background: var(--krem); display: flex; flex-direction: column; padding: 56px 64px 0; }
 
-    /* Büyük Claude yıldızı: sağ üstten taşar */
-    .yildiz { position: absolute; width: 640px; height: 640px; right: -300px; top: 250px; }
-    body.hikaye .yildiz { width: 660px; height: 660px; right: -360px; top: 340px; }
+    .afis {
+      width: 1080px; height: 1350px; position: relative; overflow: hidden;
+      background-color: var(--krem);
+      background-image: radial-gradient(rgba(20, 20, 19, 0.07) 1.6px, transparent 1.7px);
+      background-size: 30px 30px;
+      display: flex; flex-direction: column; padding: 56px 64px 0;
+    }
+    body.hikaye .afis { height: 1920px; }
 
-    /* Logo şeridi */
-    .logolar { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: #fff; border-radius: 28px; padding: 18px 30px; box-shadow: 0 2px 0 var(--cizgi); }
+    /* ---------- Logo şeridi ---------- */
+    .logolar { position: relative; z-index: 3; display: flex; align-items: center; gap: 28px; background: #fff; border-radius: 28px; padding: 18px 30px; box-shadow: 0 2px 0 var(--cizgi); }
     .logolar img { height: 118px; width: auto; display: block; }
     .logolar p { flex: 1; align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: 6px; text-align: center; border-left: 2px solid var(--cizgi); border-right: 2px solid var(--cizgi); padding: 0 18px; }
-    .logolar p strong { color: var(--koyu); font-size: 26px; font-weight: 700; line-height: 1.25; }
+    .logolar p strong { font-size: 26px; font-weight: 700; line-height: 1.25; }
     .logolar p span { color: var(--turuncu-koyu); font-size: 23px; font-weight: 600; line-height: 1.25; }
 
-    .govde { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; padding-top: 74px; }
-    body.hikaye .govde { padding-top: 150px; }
-    .ust { display: inline-flex; align-items: center; gap: 14px; font-size: 27px; font-weight: 700; color: var(--turuncu-koyu); margin-bottom: 22px; }
+    /* ---------- Kahraman alanı ---------- */
+    .kahraman { position: relative; z-index: 2; margin-top: 64px; }
+    .ust { display: inline-flex; align-items: center; gap: 14px; font-size: 27px; font-weight: 700; color: var(--turuncu-koyu); margin-bottom: 20px; }
     .ust::before { content: ""; width: 42px; height: 5px; border-radius: 3px; background: var(--turuncu); }
-    h1 { font-family: var(--baslik); font-weight: 700; font-size: 132px; line-height: 0.96; letter-spacing: -0.035em; max-width: 760px; }
-    body.hikaye h1 { font-size: 150px; }
-    .alt { font-size: 32px; line-height: 1.42; color: #3D3D3A; max-width: 600px; margin-top: 30px; }
-    body.hikaye .alt { font-size: 36px; max-width: 700px; }
+    h1 { font-family: var(--baslik); font-weight: 700; font-size: 128px; line-height: 0.95; letter-spacing: -0.035em; }
+    .alt { font-size: 30px; line-height: 1.45; color: #3D3D3A; max-width: 520px; margin-top: 28px; }
+    .ozellik { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 12px; width: max-content; }
+    .ozellik li { display: flex; align-items: center; gap: 14px; font-size: 25px; font-weight: 600; }
+    .ozellik li i { width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--turuncu); position: relative; }
+    .ozellik li i::after { content: ""; position: absolute; inset: 8px; background: #fff; -webkit-mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; }
 
-    .cipler { list-style: none; display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
-    .cipler li { font-size: 23px; font-weight: 700; padding: 11px 22px; border-radius: 999px; background: var(--krem-acik); border: 2px solid var(--koyu); }
-    .cipler li.vurgu { background: var(--turuncu); border-color: var(--turuncu); color: #fff; }
+    /* ---------- Claude yıldızı ve sohbet kartı ---------- */
+    .yildiz { position: absolute; z-index: 1; width: 560px; height: 560px; right: -170px; top: 330px; }
+    .sohbet {
+      position: absolute; z-index: 2; right: 56px; top: 600px; width: 430px;
+      background: #fff; border-radius: 26px; padding: 22px 24px 26px;
+      box-shadow: 0 30px 60px rgba(20, 20, 19, 0.16), 0 2px 0 var(--cizgi);
+      transform: rotate(2.5deg);
+    }
+    .sohbet-ust { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 700; color: var(--gri); padding-bottom: 14px; border-bottom: 2px solid #F0EEE6; margin-bottom: 16px; }
+    .sohbet-ust img { width: 28px; height: 28px; }
+    .balon-sen { margin-left: 48px; background: var(--koyu); color: #fff; font-size: 19px; line-height: 1.45; padding: 14px 18px; border-radius: 18px 18px 6px 18px; }
+    .balon-claude { display: flex; gap: 12px; margin-top: 16px; }
+    .balon-claude img { width: 30px; height: 30px; flex: none; margin-top: 2px; }
+    .balon-claude p { font-size: 19px; line-height: 1.5; color: #2D2D2A; }
+    .imlec { display: inline-block; width: 10px; height: 20px; background: var(--turuncu); vertical-align: -3px; margin-left: 4px; border-radius: 2px; }
 
-    .bilgi { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: auto; margin-bottom: 40px; }
-    body.hikaye .bilgi { margin-bottom: 70px; gap: 22px; grid-template-columns: 1fr; }
-    body.hikaye .kutu b { font-size: 34px; }
-    body.hikaye .kutu small { font-size: 22px; }
-    body.hikaye .ikon { width: 64px; height: 64px; }
-    body.hikaye .ikon i { width: 36px; height: 36px; }
-    .kutu { background: var(--krem-acik); border: 2px solid var(--cizgi); border-radius: 22px; padding: 22px 26px; display: flex; gap: 18px; align-items: center; }
-    body.hikaye .kutu { padding: 30px 30px; }
-    .ikon { width: 52px; height: 52px; flex: none; border-radius: 14px; background: var(--turuncu); display: flex; align-items: center; justify-content: center; }
-    .ikon i { width: 30px; height: 30px; background: #fff; -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
-    .kutu small { display: block; font-size: 19px; font-weight: 600; color: var(--gri); margin-bottom: 2px; }
-    .kutu b { font-size: 27px; font-weight: 700; line-height: 1.2; }
+    /* ---------- Bilgi panosu ---------- */
+    .pano { position: relative; z-index: 2; margin-top: auto; margin-bottom: 36px; display: grid; grid-template-columns: 1.15fr 0.9fr 1fr 0.95fr; background: #fff; border-radius: 26px; box-shadow: 0 2px 0 var(--cizgi); }
+    .pano div { padding: 26px 24px 24px; border-left: 2px solid #F0EEE6; }
+    .pano div:first-child { border-left: 0; }
+    .pano small { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: var(--turuncu-koyu); margin-bottom: 8px; }
+    .pano small i { width: 22px; height: 22px; background: var(--turuncu); -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
+    .pano b { display: block; font-family: var(--baslik); font-size: 44px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+    .pano span { display: block; font-size: 19px; color: var(--gri); margin-top: 6px; font-weight: 600; }
 
+    /* ---------- Alt bant ---------- */
     .bant { position: relative; z-index: 2; margin: 0 -64px; background: var(--koyu); color: var(--krem-acik); padding: 30px 64px 36px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-    body.hikaye .bant { padding: 48px 64px 64px; }
-    .bant h2 { font-family: var(--baslik); font-weight: 600; font-size: 30px; color: var(--turuncu); margin-bottom: 8px; }
-    .bant ul { list-style: none; }
-    .bant li { font-size: 25px; line-height: 1.5; }
-    .bant li::before { content: "→ "; color: var(--turuncu); font-weight: 700; }
+    .bant h2 { font-family: var(--baslik); font-weight: 600; font-size: 28px; color: var(--turuncu); margin-bottom: 10px; }
+    .bant ul { list-style: none; display: flex; gap: 30px; }
+    .bant li { display: flex; align-items: center; gap: 10px; font-size: 24px; }
+    .bant li i { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--turuncu); position: relative; flex: none; }
+    .bant li i::after { content: ""; position: absolute; inset: 4px; background: var(--turuncu); -webkit-mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; }
     .kayit { flex: none; text-align: right; }
-    .kayit b { display: block; font-size: 30px; font-weight: 700; }
-    .kayit span { font-size: 22px; color: #BDBBB3; }
+    .kayit b { display: block; font-size: 28px; font-weight: 700; }
+    .kayit span { font-size: 21px; color: #BDBBB3; }
+
+    /* ---------- Hikâye (9:16) ---------- */
+    body.hikaye .kahraman { margin-top: 56px; }
+    body.hikaye h1 { font-size: 140px; }
+    body.hikaye .alt { font-size: 34px; max-width: 640px; }
+    body.hikaye .yildiz { width: 600px; height: 600px; right: -320px; top: 380px; }
+    body.hikaye .sohbet { position: relative; top: auto; right: auto; align-self: flex-start; margin-top: 40px; margin-left: 8px; width: 660px; transform: rotate(-1.5deg); padding: 26px 30px 30px; }
+    body.hikaye .sohbet-ust { font-size: 22px; }
+    body.hikaye .balon-sen, body.hikaye .balon-claude p { font-size: 21px; }
+    body.hikaye .balon-sen { margin-left: 90px; }
+    body.hikaye .ozellik { gap: 10px; }
+    body.hikaye .pano { grid-template-columns: 1fr 1fr; }
+    body.hikaye .pano div:nth-child(3) { border-left: 0; }
+    body.hikaye .pano div:nth-child(n+3) { border-top: 2px solid #F0EEE6; }
+    body.hikaye .pano b { font-size: 48px; }
+    body.hikaye .pano div { padding: 22px 26px 20px; }
+    body.hikaye .pano span { font-size: 22px; }
+    body.hikaye .bant { padding: 44px 64px 60px; flex-direction: column; align-items: flex-start; }
+    body.hikaye .kayit { text-align: left; }
   </style>
 </head>
 <body>
@@ -82,30 +113,39 @@
       <img src="../../gorseller/logolar/tbmyo.png" alt="Çanakkale Teknik Bilimler MYO logosu">
     </header>
 
-    <main class="govde">
+    <section class="kahraman">
       <p class="ust">Yapay Zeka Eğitimleri, 1. Hafta</p>
-      <h1>Claude ile Tanışma</h1>
+      <h1>Claude ile<br>Tanışma</h1>
       <p class="alt">Yapay zekayı doğru, verimli ve güvenli kullanmayı bilgisayar başında, adım adım öğren.</p>
-      <ul class="cipler">
-        <li class="vurgu">13 uygulama</li>
-        <li>Herkes için, ön bilgi gerekmez</li>
-        <li>Katılım belgesi</li>
+      <ul class="ozellik">
+        <li><i></i>13 uygulamalı görev</li>
+        <li><i></i>Ön bilgi gerekmez</li>
+        <li><i></i>Katılım belgesi</li>
       </ul>
+    </section>
 
-      <section class="bilgi">
-        <div class="kutu"><span class="ikon"><i style="--i: url(../../ortak/ikonlar/calendar.svg)"></i></span><div><small>Tarih</small><b>1 Aralık 2026, Salı</b></div></div>
-        <div class="kutu"><span class="ikon"><i style="--i: url(../../ortak/ikonlar/clock.svg)"></i></span><div><small>Saat</small><b>15.30</b></div></div>
-        <div class="kutu"><span class="ikon"><i style="--i: url(../../ortak/ikonlar/map-pin.svg)"></i></span><div><small>Yer</small><b>Teknik Bilimler MYO, Lab3</b></div></div>
-        <div class="kutu"><span class="ikon"><i style="--i: url(../../ortak/ikonlar/users.svg)"></i></span><div><small>Kontenjan</small><b>35 kişi</b></div></div>
-      </section>
-    </main>
+    <div class="sohbet" aria-hidden="true">
+      <div class="sohbet-ust"><img src="../../gorseller/logolar/claude.svg" alt="">Claude</div>
+      <p class="balon-sen">Genç Kızılay için kan bağışı günü duyurusu yaz. 3 cümle, samimi olsun.</p>
+      <div class="balon-claude">
+        <img src="../../gorseller/logolar/claude.svg" alt="">
+        <p>Bir ünite kan, üç hayat demek! Bu salı kampüste kurulacak bağış noktamızda seni de görmek istiyoruz.<span class="imlec"></span></p>
+      </div>
+    </div>
+
+    <section class="pano">
+      <div><small><i style="--i: url(../../ortak/ikonlar/calendar.svg)"></i>Tarih</small><b>1 Aralık</b><span>2026, Salı</span></div>
+      <div><small><i style="--i: url(../../ortak/ikonlar/clock.svg)"></i>Saat</small><b>15.30</b><span>90 dakika</span></div>
+      <div><small><i style="--i: url(../../ortak/ikonlar/map-pin.svg)"></i>Yer</small><b>Lab3</b><span>Teknik Bilimler MYO</span></div>
+      <div><small><i style="--i: url(../../ortak/ikonlar/users.svg)"></i>Kontenjan</small><b>35 kişi</b><span>Sınırlı kontenjan</span></div>
+    </section>
 
     <footer class="bant">
       <div>
         <h2>Gelmeden önce</h2>
         <ul>
-          <li>claude.ai hesabını aç</li>
-          <li>UBYS şifreni hatırla</li>
+          <li><i></i>claude.ai hesabını aç</li>
+          <li><i></i>UBYS şifreni hatırla</li>
         </ul>
       </div>
       <div class="kayit"><b>Kayıt bağlantısı</b><span>profilimizde</span></div>
