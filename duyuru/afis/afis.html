@@ -31,8 +31,9 @@
     /* Logo şeridi */
     .logolar { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: #fff; border-radius: 28px; padding: 18px 30px; box-shadow: 0 2px 0 var(--cizgi); }
     .logolar img { height: 118px; width: auto; display: block; }
-    .logolar p { font-size: 22px; line-height: 1.35; font-weight: 600; color: var(--gri); text-align: center; }
-    .logolar p strong { display: block; color: var(--koyu); font-size: 25px; }
+    .logolar p { flex: 1; align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: 6px; text-align: center; border-left: 2px solid var(--cizgi); border-right: 2px solid var(--cizgi); padding: 0 18px; }
+    .logolar p strong { color: var(--koyu); font-size: 26px; font-weight: 700; line-height: 1.25; }
+    .logolar p span { color: var(--turuncu-koyu); font-size: 23px; font-weight: 600; line-height: 1.25; }
 
     .govde { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; padding-top: 74px; }
     body.hikaye .govde { padding-top: 150px; }
@@ -77,7 +78,7 @@
 
     <header class="logolar">
       <img src="../../gorseller/logolar/genc-kizilay-comu.png" alt="Türk Kızılay Genç Çanakkale Onsekiz Mart Üniversitesi logosu">
-      <p><strong>Genç Kızılay ÇOMÜ</strong>Eğitim Birimi sunar</p>
+      <p><strong>Genç Kızılay ÇOMÜ Eğitim Birimi</strong><span>Teknik Bilimler MYO iş birliğiyle</span></p>
       <img src="../../gorseller/logolar/tbmyo.png" alt="Çanakkale Teknik Bilimler MYO logosu">
     </header>
 
