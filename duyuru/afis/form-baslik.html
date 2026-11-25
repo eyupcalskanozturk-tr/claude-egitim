@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>Kayıt formu başlık görseli</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../ortak/css/fontlar.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .baslik {
+      width: 1600px; height: 400px; position: relative; overflow: hidden;
+      background-color: #F0EEE6;
+      background-image: radial-gradient(rgba(20, 20, 19, 0.07) 1.6px, transparent 1.7px);
+      background-size: 30px 30px;
+      border-top: 14px solid #E11B22;
+      display: flex; align-items: center; gap: 48px; padding: 0 90px;
+      font-family: 'Plus Jakarta Sans', sans-serif; color: #141413;
+    }
+    .logolar { display: flex; gap: 22px; align-items: center; background: #fff; border-radius: 26px; padding: 18px 26px; box-shadow: 0 2px 0 #DDDACE; flex: none; }
+    .logolar img { height: 150px; width: auto; }
+    .metin { position: relative; z-index: 2; }
+    .ust { font-size: 30px; font-weight: 700; color: #E11B22; margin-bottom: 8px; }
+    h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 104px; line-height: 0.95; letter-spacing: -0.035em; }
+    .alt { font-size: 28px; color: #6B6A63; font-weight: 600; margin-top: 14px; }
+    .yildiz { position: absolute; width: 400px; height: 400px; right: -190px; top: -10px; }
+  </style>
+</head>
+<body>
+  <div class="baslik">
+    <img class="yildiz" src="../../gorseller/logolar/claude.svg" alt="">
+    <div class="logolar">
+      <img src="../../gorseller/logolar/genc-kizilay-comu.png" alt="">
+      <img src="../../gorseller/logolar/tbmyo.png" alt="">
+    </div>
+    <div class="metin">
+      <p class="ust">Yapay Zeka Eğitimleri, 1. Hafta</p>
+      <h1>Claude ile Tanışma</h1>
+      <p class="alt">1 Aralık 2026, Salı · 15.30 · Teknik Bilimler MYO, Lab3</p>
+    </div>
+  </div>
+</body>
+</html>
