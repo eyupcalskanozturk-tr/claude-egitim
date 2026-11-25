@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>Claude ile Tanışma · Afiş</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../../ortak/css/fontlar.css">
+  <style>
+    :root {
+      --krem: #F0EEE6;
+      --krem-acik: #FAF9F5;
+      --koyu: #141413;
+      --gri: #6B6A63;
+      --cizgi: #D9D6CA;
+      --turuncu: #D97757;
+      --turuncu-koyu: #C15F3C;
+      --baslik: 'Fraunces', Georgia, serif;
+      --govde: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+      --G: 1080px;
+      --Y: 1350px;
+    }
+    body.hikaye { --Y: 1920px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #777; font-family: var(--govde); color: var(--koyu); }
+    .afis { width: var(--G); height: var(--Y); position: relative; overflow: hidden; background: var(--krem); display: flex; flex-direction: column; padding: 56px 64px 0; }
+
+    /* Büyük Claude yıldızı: sağ üstten taşar */
+    .yildiz { position: absolute; width: 640px; height: 640px; right: -300px; top: 250px; }
+    body.hikaye .yildiz { width: 660px; height: 660px; right: -360px; top: 340px; }
+
+    /* Logo şeridi */
+    .logolar { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: #fff; border-radius: 28px; padding: 18px 30px; box-shadow: 0 2px 0 var(--cizgi); }
+    .logolar img { height: 118px; width: auto; display: block; }
+    .logolar p { font-size: 22px; line-height: 1.35; font-weight: 600; color: var(--gri); text-align: center; }
+    .logolar p strong { display: block; color: var(--koyu); font-size: 25px; }
+
+    .govde { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; padding-top: 74px; }
+    body.hikaye .govde { padding-top: 150px; }
+    .ust { display: inline-flex; align-items: center; gap: 14px; font-size: 27px; font-weight: 700; color: var(--turuncu-koyu); margin-bottom: 22px; }
+    .ust::before { content: ""; width: 42px; height: 5px; border-radius: 3px; background: var(--turuncu); }
+    h1 { font-family: var(--baslik); font-weight: 700; font-size: 132px; line-height: 0.96; letter-spacing: -0.035em; max-width: 760px; }
+    body.hikaye h1 { font-size: 150px; }
+    .alt { font-size: 32px; line-height: 1.42; color: #3D3D3A; max-width: 600px; margin-top: 30px; }
+    body.hikaye .alt { font-size: 36px; max-width: 700px; }
+
+    .cipler { list-style: none; display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .cipler li { font-size: 23px; font-weight: 700; padding: 11px 22px; border-radius: 999px; background: var(--krem-acik); border: 2px solid var(--koyu); }
+    .cipler li.vurgu { background: var(--turuncu); border-color: var(--turuncu); color: #fff; }
+
+    .bilgi { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: auto; margin-bottom: 40px; }
+    body.hikaye .bilgi { margin-bottom: 70px; gap: 22px; grid-template-columns: 1fr; }
+    body.hikaye .kutu b { font-size: 34px; }
+    body.hikaye .kutu small { font-size: 22px; }
+    body.hikaye .ikon { width: 64px; height: 64px; }
+    body.hikaye .ikon i { width: 36px; height: 36px; }
+    .kutu { background: var(--krem-acik); border: 2px solid var(--cizgi); border-radius: 22px; padding: 22px 26px; display: flex; gap: 18px; align-items: center; }
+    body.hikaye .kutu { padding: 30px 30px; }
+    .ikon { width: 52px; height: 52px; flex: none; border-radius: 14px; background: var(--turuncu); display: flex; align-items: center; justify-content: center; }
+    .ikon i { width: 30px; height: 30px; background: #fff; -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
+    .kutu small { display: block; font-size: 19px; font-weight: 600; color: var(--gri); margin-bottom: 2px; }
+    .kutu b { font-size: 27px; font-weight: 700; line-height: 1.2; }
+
+    .bant { position: relative; z-index: 2; margin: 0 -64px; background: var(--koyu); color: var(--krem-acik); padding: 30px 64px 36px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    body.hikaye .bant { padding: 48px 64px 64px; }
+    .bant h2 { font-family: var(--baslik); font-weight: 600; font-size: 30px; color: var(--turuncu); margin-bottom: 8px; }
+    .bant ul { list-style: none; }
+    .bant li { font-size: 25px; line-height: 1.5; }
+    .bant li::before { content: "→ "; color: var(--turuncu); font-weight: 700; }
+    .kayit { flex: none; text-align: right; }
+    .kayit b { display: block; font-size: 30px; font-weight: 700; }
+    .kayit span { font-size: 22px; color: #BDBBB3; }
+  </style>
+</head>
+<body>
+  <div class="afis">
+    <img class="yildiz" src="../../gorseller/logolar/claude.svg" alt="">
+
+    <header class="logolar">
+      <img src="../../gorseller/logolar/genc-kizilay-comu.png" alt="Türk Kızılay Genç Çanakkale Onsekiz Mart Üniversitesi logosu">
+      <p><strong>Genç Kızılay ÇOMÜ</strong>Eğitim Birimi sunar</p>
+      <img src="../../gorseller/logolar/tbmyo.png" alt="Çanakkale Teknik Bilimler MYO logosu">
+    </header>
+
+    <main class="govde">
+      <p class="ust">Yapay Zeka Eğitimleri, 1. Hafta</p>
+      <h1>Claude ile Tanışma</h1>
+      <p class="alt">Yapay zekayı doğru, verimli ve güvenli kullanmayı bilgisayar başında, adım adım öğren.</p>
+      <ul class="cipler">
+        <li class="vurgu">13 uygulama</li>
+        <li>Herkes için, ön bilgi gerekmez</li>
+        <li>Katılım belgesi</li>
+      </ul>
+
+      <section class="bilgi">
+        <div class="kutu"><span class="ikon"><i style="--i: url(../../ortak/ikonlar/calendar.svg)"></i></span><div><small>Tarih</small><b>1 Aralık 2026, Salı</b></div></div>
+        <div class="kutu"><span class="ikon"><i style="--i: url(../../ortak/ikonlar/clock.svg)"></i></span><div><small>Saat</small><b>15.30</b></div></div>
+        <div class="kutu"><span class="ikon"><i style="--i: url(../../ortak/ikonlar/map-pin.svg)"></i></span><div><small>Yer</small><b>Teknik Bilimler MYO, Lab3</b></div></div>
+        <div class="kutu"><span class="ikon"><i style="--i: url(../../ortak/ikonlar/users.svg)"></i></span><div><small>Kontenjan</small><b>35 kişi</b></div></div>
+      </section>
+    </main>
+
+    <footer class="bant">
+      <div>
+        <h2>Gelmeden önce</h2>
+        <ul>
+          <li>claude.ai hesabını aç</li>
+          <li>UBYS şifreni hatırla</li>
+        </ul>
+      </div>
+      <div class="kayit"><b>Kayıt bağlantısı</b><span>profilimizde</span></div>
+    </footer>
+  </div>
+  <script>if (location.hash === '#hikaye') document.body.classList.add('hikaye');</script>
+</body>
+</html>
