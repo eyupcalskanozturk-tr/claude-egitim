@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="tr" data-tema="koyu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#121320">
+  <title>Konuşma kartları · Claude ile Tanışma</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../ortak/css/fontlar.css">
+  <link rel="stylesheet" href="../ortak/css/konusma.css">
+</head>
+<body>
+  <header class="ust">
+    <div class="ust-satir">
+      <div class="no"><b id="kart-no">1</b><span id="kart-toplam">/ 65</span></div>
+      <div class="baslik-alan">
+        <h1 id="kart-baslik">Claude ile Tanışma</h1>
+        <div class="meta" id="kart-meta"></div>
+      </div>
+      <div class="araclar">
+        <button class="arac" id="saat" type="button" title="Kronometreyi başlat/durdur">00:00</button>
+        <button class="arac" id="yazi-kucult" type="button" aria-label="Yazıyı küçült">A−</button>
+        <button class="arac" id="yazi-buyut" type="button" aria-label="Yazıyı büyüt">A+</button>
+        <button class="arac" id="tema" type="button" aria-label="Açık/koyu tema">☀</button>
+        <button class="arac" id="liste-ac" type="button" aria-label="Slayt listesi">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="kart-icerik" aria-live="polite"></main>
+
+  <nav class="alt">
+    <button class="git" id="geri" type="button" aria-label="Önceki kart">◀</button>
+    <div id="siradaki"></div>
+    <button class="git" id="ileri" type="button" aria-label="Sonraki kart">▶</button>
+  </nav>
+
+  <section id="liste" hidden>
+    <div class="liste-ust">
+      <h2>Slaytlar</h2>
+      <button class="arac" id="liste-kapat" type="button" aria-label="Listeyi kapat">✕</button>
+    </div>
+    <ol id="liste-ol"></ol>
+  </section>
+
+  <script src="konusma-verisi.js"></script>
+  <script src="../ortak/js/konusma.js"></script>
+</body>
+</html>
