@@ -33,7 +33,8 @@
     /* ---------- Logo şeridi ---------- */
     .logolar { position: relative; z-index: 3; display: flex; align-items: center; gap: 34px; background: #fff; border-radius: 28px; padding: 22px 36px; box-shadow: 0 1px 0 var(--cizgi), 0 14px 30px rgba(20, 20, 19, 0.05); }
     .ortak { display: flex; align-items: center; gap: 18px; flex: none; }
-    .ortak img { height: 112px; width: auto; display: block; }
+    .ortak img { height: 104px; width: auto; display: block; }
+    .ortak img:first-child { height: 126px; }
     .ortak .carpi { font-size: 30px; font-weight: 400; color: #B5B3AA; line-height: 1; }
     .logolar .kimlik { flex: 1; align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: 8px; border-left: 2px solid var(--cizgi); padding-left: 34px; }
     .logolar .kimlik strong { font-size: 28px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
@@ -70,22 +71,22 @@
     .pano { position: relative; z-index: 2; margin-top: auto; margin-bottom: 36px; display: grid; grid-template-columns: 1.15fr 0.9fr 1fr 0.95fr; background: #fff; border-radius: 26px; box-shadow: 0 1px 0 var(--cizgi), 0 14px 30px rgba(20, 20, 19, 0.05); }
     .pano div { padding: 26px 24px 24px; border-left: 2px solid #F0EEE6; }
     .pano div:first-child { border-left: 0; }
-    .pano small { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: var(--turuncu-koyu); margin-bottom: 8px; }
-    .pano small i { width: 22px; height: 22px; background: var(--turuncu); -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
+    .pano small { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: var(--kizilay); margin-bottom: 8px; }
+    .pano small i { width: 22px; height: 22px; background: var(--kizilay); -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
     .pano b { display: block; font-family: var(--baslik); font-size: 44px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; font-variant-numeric: lining-nums tabular-nums; }
     .pano span { display: block; font-size: 19px; color: var(--gri); margin-top: 6px; font-weight: 600; }
 
     /* ---------- Alt bant ---------- */
-    .bant { position: relative; z-index: 2; margin: 0 -64px; background: var(--koyu); color: var(--krem-acik); padding: 30px 64px 36px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-    .bant h2 { font-family: var(--baslik); font-weight: 600; font-size: 28px; color: var(--turuncu); margin-bottom: 10px; }
+    .bant { position: relative; z-index: 2; margin: 0 -64px; background: var(--kizilay); color: #fff; padding: 30px 64px 36px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .bant h2 { font-family: var(--baslik); font-weight: 700; font-size: 30px; color: #fff; margin-bottom: 10px; }
     .bant ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
     .bant li { display: flex; align-items: center; gap: 10px; font-size: 24px; }
-    .bant li i { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--turuncu); position: relative; flex: none; }
-    .bant li i::after { content: ""; position: absolute; inset: 4px; background: var(--turuncu); -webkit-mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; }
+    .bant li i { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; position: relative; flex: none; }
+    .bant li i::after { content: ""; position: absolute; inset: 4px; background: #fff; -webkit-mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; }
     .kayit { flex: none; display: flex; align-items: center; gap: 20px; }
-    .kayit .karekod { width: 132px; height: 132px; background: #fff; padding: 10px; border-radius: 14px; flex: none; box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.55); }
+    .kayit .karekod { width: 132px; height: 132px; background: #fff; padding: 10px; border-radius: 14px; flex: none; box-shadow: 0 6px 18px rgba(20, 20, 19, 0.25); }
     .kayit b { display: block; font-size: 30px; font-weight: 700; color: #fff; }
-    .kayit span { display: block; font-size: 18px; color: #BDBBB3; max-width: 230px; line-height: 1.35; margin-top: 4px; }
+    .kayit span { display: block; font-size: 18px; color: rgba(255, 255, 255, 0.88); max-width: 230px; line-height: 1.35; margin-top: 4px; }
 
     /* ---------- Hikâye (9:16) ---------- */
     body.hikaye .kahraman { margin-top: 56px; }
@@ -123,7 +124,7 @@
     </header>
 
     <section class="kahraman">
-      <p class="ust">Yapay Zeka Eğitimleri, 1. Hafta</p>
+      <p class="ust">Genç Kızılay Yapay Zeka Eğitimleri, 1. Hafta</p>
       <h1>Claude ile<br>Tanışma</h1>
       <p class="alt">Yapay zekayı doğru, verimli ve güvenli kullanmayı bilgisayar başında, adım adım öğren.</p>
       <ul class="ozellik">
