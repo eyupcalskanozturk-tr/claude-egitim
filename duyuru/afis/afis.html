@@ -31,11 +31,13 @@
     body.hikaye .afis { height: 1920px; }
 
     /* ---------- Logo şeridi ---------- */
-    .logolar { position: relative; z-index: 3; display: flex; align-items: center; gap: 28px; background: #fff; border-radius: 28px; padding: 18px 30px; box-shadow: 0 1px 0 var(--cizgi), 0 14px 30px rgba(20, 20, 19, 0.05); }
-    .logolar img { height: 118px; width: auto; display: block; }
-    .logolar p { flex: 1; align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: 6px; text-align: center; border-left: 2px solid var(--cizgi); border-right: 2px solid var(--cizgi); padding: 0 18px; }
-    .logolar p strong { font-size: 26px; font-weight: 700; line-height: 1.25; }
-    .logolar p span { color: var(--kizilay); font-size: 23px; font-weight: 600; line-height: 1.25; }
+    .logolar { position: relative; z-index: 3; display: flex; align-items: center; gap: 34px; background: #fff; border-radius: 28px; padding: 22px 36px; box-shadow: 0 1px 0 var(--cizgi), 0 14px 30px rgba(20, 20, 19, 0.05); }
+    .ortak { display: flex; align-items: center; gap: 18px; flex: none; }
+    .ortak img { height: 112px; width: auto; display: block; }
+    .ortak .carpi { font-size: 30px; font-weight: 400; color: #B5B3AA; line-height: 1; }
+    .logolar .kimlik { flex: 1; align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: 8px; border-left: 2px solid var(--cizgi); padding-left: 34px; }
+    .logolar .kimlik strong { font-size: 28px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+    .logolar .kimlik span { display: inline-flex; align-items: center; gap: 10px; color: var(--kizilay); font-size: 22px; font-weight: 600; line-height: 1.25; }
 
     /* ---------- Kahraman alanı ---------- */
     .kahraman { position: relative; z-index: 2; margin-top: 64px; }
@@ -112,9 +114,12 @@
     <img class="yildiz" src="../../gorseller/logolar/claude.svg" alt="">
 
     <header class="logolar">
-      <img src="../../gorseller/logolar/genc-kizilay-comu.png" alt="Türk Kızılay Genç Çanakkale Onsekiz Mart Üniversitesi logosu">
-      <p><strong>Genç Kızılay ÇOMÜ Eğitim Birimi</strong><span>Teknik Bilimler MYO iş birliğiyle</span></p>
-      <img src="../../gorseller/logolar/tbmyo.png" alt="Çanakkale Teknik Bilimler MYO logosu">
+      <div class="ortak">
+        <img src="../../gorseller/logolar/genc-kizilay-comu.png" alt="Türk Kızılay Genç Çanakkale Onsekiz Mart Üniversitesi logosu">
+        <span class="carpi" aria-hidden="true">×</span>
+        <img src="../../gorseller/logolar/tbmyo.png" alt="Çanakkale Teknik Bilimler MYO logosu">
+      </div>
+      <p class="kimlik"><strong>Genç Kızılay ÇOMÜ Eğitim Birimi</strong><span>Teknik Bilimler MYO iş birliğiyle</span></p>
     </header>
 
     <section class="kahraman">
