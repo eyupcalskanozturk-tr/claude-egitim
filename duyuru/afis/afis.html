@@ -31,7 +31,7 @@
     body.hikaye .afis { height: 1920px; }
 
     /* ---------- Logo şeridi ---------- */
-    .logolar { position: relative; z-index: 3; display: flex; align-items: center; gap: 28px; background: #fff; border-radius: 28px; padding: 18px 30px; box-shadow: 0 2px 0 var(--cizgi); border-top: 8px solid var(--kizilay); }
+    .logolar { position: relative; z-index: 3; display: flex; align-items: center; gap: 28px; background: #fff; border-radius: 28px; padding: 18px 30px; box-shadow: 0 1px 0 var(--cizgi), 0 14px 30px rgba(20, 20, 19, 0.05); }
     .logolar img { height: 118px; width: auto; display: block; }
     .logolar p { flex: 1; align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: 6px; text-align: center; border-left: 2px solid var(--cizgi); border-right: 2px solid var(--cizgi); padding: 0 18px; }
     .logolar p strong { font-size: 26px; font-weight: 700; line-height: 1.25; }
@@ -42,7 +42,7 @@
     .ust { display: inline-flex; align-items: center; gap: 14px; font-size: 27px; font-weight: 700; color: var(--kizilay); margin-bottom: 20px; }
     .ust::before { content: ""; width: 42px; height: 5px; border-radius: 3px; background: var(--kizilay); }
     h1 { font-family: var(--baslik); font-weight: 700; font-size: 128px; line-height: 0.95; letter-spacing: -0.035em; }
-    .alt { font-size: 30px; line-height: 1.45; color: #3D3D3A; max-width: 520px; margin-top: 28px; }
+    .alt { font-size: 30px; line-height: 1.5; color: #42413D; max-width: 520px; margin-top: 28px; }
     .ozellik { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 12px; width: max-content; }
     .ozellik li { display: flex; align-items: center; gap: 14px; font-size: 25px; font-weight: 600; }
     .ozellik li i { width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--kizilay); position: relative; }
@@ -53,7 +53,7 @@
     .sohbet {
       position: absolute; z-index: 2; right: 56px; top: 600px; width: 430px;
       background: #fff; border-radius: 26px; padding: 22px 24px 26px;
-      box-shadow: 0 30px 60px rgba(20, 20, 19, 0.16), 0 2px 0 var(--cizgi);
+      box-shadow: 0 30px 60px rgba(20, 20, 19, 0.16), 0 2px 0 var(--cizgi), 0 0 0 1px rgba(20, 20, 19, 0.05);
       transform: rotate(2.5deg);
     }
     .sohbet-ust { display: flex; align-items: center; gap: 10px; font-size: 19px; font-weight: 700; color: var(--gri); padding-bottom: 14px; border-bottom: 2px solid #F0EEE6; margin-bottom: 16px; }
@@ -65,12 +65,12 @@
     .imlec { display: inline-block; width: 10px; height: 20px; background: var(--turuncu); vertical-align: -3px; margin-left: 4px; border-radius: 2px; }
 
     /* ---------- Bilgi panosu ---------- */
-    .pano { position: relative; z-index: 2; margin-top: auto; margin-bottom: 36px; display: grid; grid-template-columns: 1.15fr 0.9fr 1fr 0.95fr; background: #fff; border-radius: 26px; box-shadow: 0 2px 0 var(--cizgi); }
+    .pano { position: relative; z-index: 2; margin-top: auto; margin-bottom: 36px; display: grid; grid-template-columns: 1.15fr 0.9fr 1fr 0.95fr; background: #fff; border-radius: 26px; box-shadow: 0 1px 0 var(--cizgi), 0 14px 30px rgba(20, 20, 19, 0.05); }
     .pano div { padding: 26px 24px 24px; border-left: 2px solid #F0EEE6; }
     .pano div:first-child { border-left: 0; }
     .pano small { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: var(--turuncu-koyu); margin-bottom: 8px; }
     .pano small i { width: 22px; height: 22px; background: var(--turuncu); -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
-    .pano b { display: block; font-family: var(--baslik); font-size: 44px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+    .pano b { display: block; font-family: var(--baslik); font-size: 44px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; font-variant-numeric: lining-nums tabular-nums; }
     .pano span { display: block; font-size: 19px; color: var(--gri); margin-top: 6px; font-weight: 600; }
 
     /* ---------- Alt bant ---------- */
@@ -81,7 +81,7 @@
     .bant li i { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--turuncu); position: relative; flex: none; }
     .bant li i::after { content: ""; position: absolute; inset: 4px; background: var(--turuncu); -webkit-mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; mask: url(../../ortak/ikonlar/check.svg) center / contain no-repeat; }
     .kayit { flex: none; display: flex; align-items: center; gap: 20px; }
-    .kayit .karekod { width: 132px; height: 132px; background: #fff; padding: 10px; border-radius: 14px; flex: none; }
+    .kayit .karekod { width: 132px; height: 132px; background: #fff; padding: 10px; border-radius: 14px; flex: none; box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.55); }
     .kayit b { display: block; font-size: 30px; font-weight: 700; color: #fff; }
     .kayit span { display: block; font-size: 18px; color: #BDBBB3; max-width: 230px; line-height: 1.35; margin-top: 4px; }
 
