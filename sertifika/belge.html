@@ -95,32 +95,66 @@
       HAFTALAR.forEach(function (h, i) {
         var guc = i === 0 ? 0.75 : 0.5, kalinlik = i === 0 ? 0.45 : 0.32;
         s += '<g clip-path="url(#kesit' + i + ')" fill="none" stroke="' + h.renk + '" stroke-width="' + kalinlik + '">';
-        for (var r = 97; r < 196; r += 4.5) {
-          var op = guc * Math.pow(1 - (r - 97) / 100, 1.5);
+        for (var r = 104; r < 200; r += 4.5) {
+          var op = guc * Math.pow(1 - (r - 104) / 96, 1.5);
           s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" stroke-opacity="' + op.toFixed(3) + '"/>';
         }
         s += '</g>';
       });
 
-      // Madalyon: dört renkli halka, beyaz disk, resmi logo
-      s += '<circle cx="' + cx + '" cy="' + cy + '" r="92" fill="var(--kagit)" stroke="#E11B22" stroke-width="0.5"/>';
+      // ---------- Madalyon ----------
+      // Katmanlar (içten dışa): logo · kırmızı yazı halkası · giyoşlu renk bandı · kadran · kırmızı çember
+      var ceyrekRengi = function (aci) { aci = ((aci % 360) + 360) % 360; return HAFTALAR[aci >= 180 && aci < 270 ? 0 : aci >= 270 ? 1 : aci >= 90 ? 2 : 3].renk; };
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="99" fill="var(--kagit)"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="98" fill="none" stroke="#E11B22" stroke-width="0.55"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="96.6" fill="none" stroke="#E11B22" stroke-width="0.2"/>';
+
+      // Kadran: her 2,5°'de bir çizgi, her 15°'de uzun çizgi; çeyrek kendi haftasının renginde
+      for (var t = 0; t < 360; t += 2.5) {
+        if (t % 90 === 0) continue; // dikişlerde boşluk
+        var uzun = t % 15 === 0, a1 = xy(uzun ? 88.6 : 90.4, t), a2 = xy(94.2, t);
+        s += '<line x1="' + a1[0] + '" y1="' + a1[1] + '" x2="' + a2[0] + '" y2="' + a2[1] + '" stroke="' + ceyrekRengi(t + 0.1) + '" stroke-width="' + (uzun ? 0.55 : 0.3) + '"/>';
+      }
+
+      // Renk bandı (70–86 mm), her çeyrek bir hafta
       [[180, 0], [270, 1], [90, 2], [0, 3]].forEach(function (d) {
         var a = d[0], b = d[0] + 90;
-        s += '<path d="M' + n(86, a) + ' A86,86 0 0 1 ' + n(86, b) + ' L' + n(72, b) + ' A72,72 0 0 0 ' + n(72, a) + ' Z" fill="' + HAFTALAR[d[1]].renk + '"/>';
+        s += '<path d="M' + n(86, a) + ' A86,86 0 0 1 ' + n(86, b) + ' L' + n(70, b) + ' A70,70 0 0 0 ' + n(70, a) + ' Z" fill="' + HAFTALAR[d[1]].renk + '"/>';
       });
-      s += '<defs><path id="ust-yay" d="M' + (cx - 76.7) + ',' + cy + ' A76.7,76.7 0 0 1 ' + (cx + 76.7) + ',' + cy + '"/>' +
-           '<path id="alt-yay" d="M' + (cx - 81.3) + ',' + cy + ' A81.3,81.3 0 0 0 ' + (cx + 81.3) + ',' + cy + '"/></defs>';
-      var halka = function (id, metin) { return '<text font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="6.2" fill="#FFFFFF" letter-spacing="1.25" text-anchor="middle"><textPath href="#' + id + '" startOffset="50%">' + metin + '</textPath></text>'; };
+      // Giyoş: bandın üzerinde iç içe geçen ince beyaz dalgalar (güvenlik baskısı inceliği)
+      var giyos = function (orta, genlik, frekans, faz, op, kal) {
+        var yol = '';
+        for (var u = 0; u <= 360; u += 0.6) {
+          var rr = orta + genlik * Math.sin((frekans * u + faz) * Math.PI / 180);
+          yol += (u ? 'L' : 'M') + n(rr, u);
+        }
+        return '<path d="' + yol + 'Z" fill="none" stroke="#FFFFFF" stroke-opacity="' + op + '" stroke-width="' + kal + '"/>';
+      };
+      for (var k = 0; k < 6; k++) s += giyos(78, 6.2, 20, k * 60, 0.42, 0.22);
+      for (var k2 = 0; k2 < 4; k2++) s += giyos(78, 3.2, 40, k2 * 90 + 45, 0.28, 0.16);
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="85.6" fill="none" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="0.25"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="70.4" fill="none" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="0.25"/>';
+      // Dikişlerde (dört haftanın buluştuğu yerlerde) küçük beyaz eşkenar dörtgen
+      [0, 90, 180, 270].forEach(function (a) {
+        var p = xy(78, a), q = 2.4;
+        s += '<polygon points="' + p[0] + ',' + (p[1] - q) + ' ' + (p[0] + q) + ',' + p[1] + ' ' + p[0] + ',' + (p[1] + q) + ' ' + (p[0] - q) + ',' + p[1] + '" fill="#FFFFFF" transform="rotate(' + a + ' ' + p[0] + ' ' + p[1] + ')"/>';
+      });
+
+      // Beyaz disk ve logonun çevresinde kırmızı yazı halkası
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="70" fill="#FFFFFF"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="68.4" fill="none" stroke="#E11B22" stroke-width="0.45"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="59.6" fill="none" stroke="#E11B22" stroke-width="0.3"/>';
+      s += '<defs><path id="ust-yay" d="M' + (cx - 62.3) + ',' + cy + ' A62.3,62.3 0 0 1 ' + (cx + 62.3) + ',' + cy + '"/>' +
+           '<path id="alt-yay" d="M' + (cx - 65.7) + ',' + cy + ' A65.7,65.7 0 0 0 ' + (cx + 65.7) + ',' + cy + '"/></defs>';
+      var halka = function (id, metin) { return '<text font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="4.3" fill="#E11B22" letter-spacing="1.35" text-anchor="middle"><textPath href="#' + id + '" startOffset="50%">' + metin + '</textPath></text>'; };
       s += halka('ust-yay', 'GENÇ KIZILAY ÇOMÜ EĞİTİM BİRİMİ') + halka('alt-yay', 'YAPAY ZEKA EĞİTİMLERİ 2026');
-      [180, 0].forEach(function (a) { var p = xy(79, a); s += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="1.3" fill="#FFFFFF"/>'; });
-      s += '<circle cx="' + cx + '" cy="' + cy + '" r="72" fill="#FFFFFF"/>';
-      s += '<circle cx="' + cx + '" cy="' + cy + '" r="68" fill="none" stroke="#E11B22" stroke-width="0.6"/>';
-      var lh = 94, lw = lh * 607 / 900;
+      [180, 0].forEach(function (a) { var p = xy(64, a); s += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="0.9" fill="#E11B22"/>'; });
+      var lh = 86, lw = lh * 607 / 900;
       s += '<image href="../gorseller/logolar/genc-kizilay-comu.png" x="' + (cx - lw / 2).toFixed(2) + '" y="' + (cy - lh / 2) + '" width="' + lw.toFixed(2) + '" height="' + lh + '"/>';
 
       // Haftaların işaretleri madalyonun köşegenlerinde
-      [[225, 0, 48], [315, 1, 24], [135, 2, 34], [45, 3, 34]].forEach(function (d) {
-        var p = xy(122, d[0]);
+      [[225, 0, 44], [315, 1, 22], [135, 2, 30], [45, 3, 30]].forEach(function (d) {
+        var p = xy(d[1] === 0 ? 130 : 124, d[0]);
         s += simge(HAFTALAR[d[1]], p[0], p[1], d[2]);
       });
 
