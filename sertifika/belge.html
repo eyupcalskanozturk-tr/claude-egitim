@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Katılım Belgesi · Genç Kızılay ÇOMÜ</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../ortak/css/fontlar.css">
+  <style>
+    /* Her belge A4 yatay (297×210 mm). Dört belge 2×2 dizilince A2 yatay (594×420 mm) tek bir tasarım olur. */
+    :root {
+      --murekkep: #22205A;
+      --gri: #5C5A6E;
+      --kizilay: #E11B22;
+      --baslik: 'Fraunces', Georgia, serif;
+      --govde: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+    }
+    @page { size: 297mm 210mm; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #8A8A8A; font-family: var(--govde); color: var(--murekkep); }
+    .sayfa { width: 297mm; height: 210mm; position: relative; overflow: hidden; background: #FBF8F1; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .sayfa + .sayfa { break-before: page; }
+    @media print { body { background: none; } }
+    .desen { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    /* İçerik dış kenara yaslanır; iç köşe (madalyon) boş kalır */
+    .icerik { position: absolute; width: 205mm; top: 22mm; bottom: 20mm; display: flex; flex-direction: column; }
+    .sol .icerik { left: 22mm; text-align: left; align-items: flex-start; }
+    .sag .icerik { right: 22mm; text-align: right; align-items: flex-end; }
+    .alt-sira .icerik { top: 20mm; bottom: 22mm; }
+
+    .logolar { display: flex; align-items: center; gap: 5mm; }
+    .logolar img { height: 19mm; width: auto; mix-blend-mode: multiply; }
+    .logolar .carpi { color: #B5B3AA; font-size: 5mm; }
+    .hafta { display: inline-block; margin-top: 7mm; padding: 1.4mm 4mm; border-radius: 10mm; color: #fff; font-weight: 700; font-size: 3.9mm; background: var(--renk); }
+    h1 { font-family: var(--baslik); font-weight: 700; font-size: 15mm; line-height: 1; margin-top: 4mm; letter-spacing: -0.02em; }
+    .ad { font-family: var(--baslik); font-weight: 600; font-size: 11.5mm; line-height: 1.1; margin-top: 7mm; padding-bottom: 2mm; border-bottom: 0.5mm solid var(--renk); min-width: 120mm; }
+    .metin { font-size: 4.1mm; line-height: 1.55; margin-top: 5mm; max-width: 190mm; color: #33316A; }
+    .metin b { color: var(--murekkep); }
+    .alt { margin-top: auto; display: flex; gap: 14mm; align-items: flex-end; }
+    .sag .alt { flex-direction: row-reverse; }
+    .imza { width: 58mm; }
+    .imza .cizgi { border-top: 0.35mm solid var(--murekkep); margin-bottom: 1.6mm; }
+    .imza b { display: block; font-size: 3.6mm; }
+    .imza span { display: block; font-size: 3mm; color: var(--gri); line-height: 1.35; }
+    .parca { display: flex; align-items: center; gap: 2.5mm; font-size: 2.8mm; color: var(--gri); max-width: 46mm; line-height: 1.35; }
+    .sag .parca { flex-direction: row-reverse; }
+    .harita { flex: none; display: grid; grid-template-columns: 4.2mm 4.2mm; gap: 0.6mm; }
+    .harita i { width: 4.2mm; height: 4.2mm; border-radius: 0.8mm; background: #DDD9CC; }
+    .harita i.ben { background: var(--renk); }
+
+    /* Sitede açılırsa (yerel dosya / localhost değilse) belge "ÖRNEK" damgalı çıkar */
+    .ornek .sayfa::after { content: "ÖRNEK"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-24deg); font: 700 62mm/1 var(--baslik); color: rgba(225, 27, 34, 0.16); letter-spacing: 0.08em; pointer-events: none; }
+
+    /* Birleşik önizleme: dört sayfa 2×2, aralarında boşluk yok */
+    body.birlesik { display: grid; grid-template-columns: 297mm 297mm; width: 594mm; }
+  </style>
+</head>
+<body>
+  <script>
+    var HAFTALAR = [
+      { no: 1, konu: 'Claude ile Tanışma', tarih: '1 Aralık 2026', renk: '#D97757', seri: 'Yapay Zeka Eğitimleri serisinin 1. haftası olan', konum: 'sol ust-sira' },
+      { no: 2, konu: 'Excel Kullanımı', tarih: '8 Aralık 2026', renk: '#2E8B57', seri: 'Yapay Zeka Eğitimleri serisinin 2. haftası olan', konum: 'sag ust-sira' },
+      { no: 3, konu: '[3. hafta konusu]', tarih: '15 Aralık 2026', renk: '#2F6DB5', seri: 'Yapay Zeka Eğitimleri serisinin 3. haftası olan', konum: 'sol alt-sira' },
+      { no: 4, konu: '[4. hafta konusu]', tarih: '22 Aralık 2026', renk: '#6B4FA0', seri: 'Yapay Zeka Eğitimleri serisinin 4. haftası olan', konum: 'sag alt-sira' },
+    ];
+    var IMZALAR = [
+      { ad: 'Eyüp Çalışkanöztürk', unvan: 'Genç Kızılay ÇOMÜ<br>Eğitim Birimi Başkanı' },
+      { ad: '[Ad Soyad]', unvan: 'Genç Kızılay ÇOMÜ<br>Başkanı' },
+    ];
+
+    // ---------- Dört belgeye yayılan ortak desen (594×420 mm, merkez 297,210) ----------
+    function ortakDesen() {
+      var cx = 297, cy = 210, s = '';
+      var renk = function (aci) { // SVG'de açı saat yönünde, y aşağı
+        if (aci >= 180 && aci < 270) return HAFTALAR[0].renk; // sol üst
+        if (aci >= 270) return HAFTALAR[1].renk;               // sağ üst
+        if (aci >= 90 && aci < 180) return HAFTALAR[2].renk;   // sol alt
+        return HAFTALAR[3].renk;                               // sağ alt
+      };
+      var nokta = function (r, aci) { var a = aci * Math.PI / 180; return (cx + r * Math.cos(a)).toFixed(2) + ',' + (cy + r * Math.sin(a)).toFixed(2); };
+      // Işınlar
+      for (var aci = 0; aci < 360; aci += 7.5) {
+        s += '<polygon points="' + cx + ',' + cy + ' ' + nokta(480, aci) + ' ' + nokta(480, aci + 3.75) + '" fill="' + renk(aci + 1) + '" fill-opacity="0.07"/>';
+      }
+      // Halkalar
+      [86, 104, 128].forEach(function (r, i) { s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="#22205A" stroke-opacity="' + (0.13 - i * 0.03) + '" stroke-width="0.35" stroke-dasharray="' + (i === 1 ? '1.2 1.8' : 'none') + '"/>'; });
+      // Madalyon: dört renkli dilim
+      [[180, 0], [270, 1], [90, 2], [0, 3]].forEach(function (d) {
+        s += '<path d="M' + cx + ',' + cy + ' L' + nokta(64, d[0]) + ' A64,64 0 0 1 ' + nokta(64, d[0] + 90) + ' Z" fill="' + HAFTALAR[d[1]].renk + '"/>';
+      });
+      // Halka yazısı: üst yay saat yönünde, alt yay ters yönde; ikisi de soldan sağa düz okunur
+      s += '<defs><path id="ust-yay" d="M' + (cx - 52.6) + ',' + cy + ' A52.6,52.6 0 0 1 ' + (cx + 52.6) + ',' + cy + '"/>' +
+           '<path id="alt-yay" d="M' + (cx - 56.4) + ',' + cy + ' A56.4,56.4 0 0 0 ' + (cx + 56.4) + ',' + cy + '"/></defs>';
+      var halka = function (id, metin, ls) { return '<text font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="5" fill="#FFFFFF" letter-spacing="' + ls + '" text-anchor="middle"><textPath href="#' + id + '" startOffset="50%">' + metin + '</textPath></text>'; };
+      s += halka('ust-yay', 'GENÇ KIZILAY ÇOMÜ', 1.5) + halka('alt-yay', 'YAPAY ZEKA EĞİTİMLERİ · 2026', 0.7);
+      [nokta(54.5, 180), nokta(54.5, 0)].forEach(function (p) { p = p.split(','); s += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="1.1" fill="#FFFFFF"/>'; });
+      // İç disk
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="45" fill="#FBF8F1"/>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="45" fill="none" stroke="#22205A" stroke-opacity="0.15" stroke-width="0.4"/>';
+      s += '<text x="' + cx + '" y="' + (cy + 6) + '" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="27" fill="#22205A" letter-spacing="-0.6">4/4</text>';
+      s += '<text x="' + cx + '" y="' + (cy + 19) + '" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="5" fill="#E11B22">Seriyi tamamladı</text>';
+      // Hafta numaraları (madalyonun dışında)
+      [[225, 0], [315, 1], [135, 2], [45, 3]].forEach(function (d) {
+        var p = nokta(76, d[0]).split(',');
+        s += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="7" fill="' + HAFTALAR[d[1]].renk + '"/>';
+        s += '<text x="' + p[0] + '" y="' + (Number(p[1]) + 3) + '" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="8.5" fill="#FFFFFF">' + (d[1] + 1) + '</text>';
+      });
+      // Dış çerçeve (her belgede iki dış kenar; birleşince tek çerçeve)
+      s += '<rect x="7" y="7" width="580" height="406" fill="none" stroke="#E11B22" stroke-width="2.6"/>';
+      s += '<rect x="11" y="11" width="572" height="398" fill="none" stroke="#22205A" stroke-opacity="0.35" stroke-width="0.4"/>';
+      return s;
+    }
+
+    function belge(h, ad) {
+      var sutun = (h.no - 1) % 2, sira = Math.floor((h.no - 1) / 2);
+      var harita = [0, 1, 2, 3].map(function (i) { return '<i' + (i === h.no - 1 ? ' class="ben"' : '') + '></i>'; }).join('');
+      return '<section class="sayfa ' + h.konum + '" style="--renk:' + h.renk + '">' +
+        '<svg class="desen" viewBox="' + (sutun * 297) + ' ' + (sira * 210) + ' 297 210" preserveAspectRatio="none">' + DESEN + '</svg>' +
+        '<div class="icerik">' +
+          '<div class="logolar"><img src="../gorseller/logolar/genc-kizilay-comu.png" alt=""><span class="carpi">×</span><img src="../gorseller/logolar/tbmyo.png" alt=""></div>' +
+          '<span class="hafta">' + h.no + '. Hafta · ' + h.konu + '</span>' +
+          '<h1>Katılım Belgesi</h1>' +
+          '<p class="ad">' + kacis(ad) + '</p>' +
+          '<p class="metin">Genç Kızılay ÇOMÜ Eğitim Birimi tarafından Teknik Bilimler MYO iş birliğiyle <b>' + h.tarih + '</b> tarihinde düzenlenen ' + h.seri + ' <b>“' + h.konu + '”</b> uygulamalı eğitimine katılmıştır.</p>' +
+          '<div class="alt">' +
+            IMZALAR.map(function (i) { return '<div class="imza"><div class="cizgi"></div><b>' + i.ad + '</b><span>' + i.unvan + '</span></div>'; }).join('') +
+            '<div class="parca"><div class="harita">' + harita + '</div><span>Parça ' + h.no + '/4 · Dört haftanın belgesini birleştir, seriyi tamamla.</span></div>' +
+          '</div>' +
+        '</div>' +
+      '</section>';
+    }
+
+    function kacis(metin) {
+      return String(metin).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function temizle() { document.querySelectorAll('.sayfa').forEach(function (s) { s.remove(); }); }
+
+    // Toplu baskı için: belgeleriCiz(1, ['Ayşe Yılmaz', 'Ali Veli']) → her isim ayrı A4 sayfa
+    window.belgeleriCiz = function (hafta, adlar) {
+      var h = HAFTALAR[Math.min(4, Math.max(1, Number(hafta) || 1)) - 1];
+      temizle();
+      document.body.classList.remove('birlesik');
+      document.body.insertAdjacentHTML('beforeend', adlar.map(function (ad) { return belge(h, ad); }).join(''));
+    };
+
+    if (location.protocol !== 'file:' && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) document.body.classList.add('ornek');
+
+    var DESEN = ortakDesen();
+    var q = new URLSearchParams(location.search);
+    var ad = q.get('ad') || 'Ad Soyad';
+    if (q.get('tum')) {
+      document.body.classList.add('birlesik');
+      document.body.insertAdjacentHTML('beforeend', HAFTALAR.map(function (h) { return belge(h, ad); }).join(''));
+    } else {
+      window.belgeleriCiz(q.get('hafta'), [ad]);
+    }
+  </script>
+</body>
+</html>
