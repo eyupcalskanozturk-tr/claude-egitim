@@ -9,7 +9,7 @@ test('her hafta kendi parçasını ve doğru desen kesitini çizer', async ({ pa
   for (const h of [1, 2, 3, 4]) {
     await page.goto(`${ADRES}?hafta=${h}&ad=Deneme`);
     await expect(page.locator('.sayfa')).toHaveCount(1);
-    await expect(page.locator('.hafta')).toContainText(`${h}. Hafta`);
+    await expect(page.locator('.hafta')).toContainText(`${h}. hafta`);
     await expect(page.locator('.desen')).toHaveAttribute('viewBox', beklenen[h]);
   }
   expect(hatalar).toEqual([]);
@@ -28,7 +28,7 @@ test('belgeleriCiz birden çok ismi ayrı sayfalara güvenle yazar', async ({ pa
   await page.goto(`${ADRES}?hafta=1`);
   await page.evaluate(() => window.belgeleriCiz(2, ['Ayşe Yılmaz', '<b>Ali</b> & Veli']));
   await expect(page.locator('.sayfa')).toHaveCount(2);
-  await expect(page.locator('.hafta').first()).toContainText('2. Hafta');
+  await expect(page.locator('.hafta').first()).toContainText('2. hafta');
   await expect(page.locator('.ad').nth(1)).toHaveText('<b>Ali</b> & Veli');
 });
 

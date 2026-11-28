@@ -19,17 +19,18 @@ const ARALIK = {
   'latin-ext': 'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF',
 };
 const aileler = [
-  ['fraunces', 'Fraunces', [600, 700]],
+  ['fraunces', 'Fraunces', [600, 700], [500]], // 500 italik: katılım belgesindeki isim
   ['plus-jakarta-sans', 'Plus Jakarta Sans', [400, 600, 700]],
   ['caveat', 'Caveat', [700]],
 ];
 let css = '/* scripts/vendor.mjs tarafından üretilir, elle düzenlemeyin. Kaynak: @fontsource (OFL). */\n';
-for (const [paket, ad, agirliklar] of aileler) {
-  for (const agirlik of agirliklar) {
+for (const [paket, ad, agirliklar, italikler = []] of aileler) {
+  const turler = [...agirliklar.map((a) => [a, 'normal']), ...italikler.map((a) => [a, 'italic'])];
+  for (const [agirlik, stil] of turler) {
     for (const alt of ['latin-ext', 'latin']) {
-      const dosya = `${paket}-${alt}-${agirlik}-normal.woff2`;
+      const dosya = `${paket}-${alt}-${agirlik}-${stil}.woff2`;
       cpSync(`${nm}/@fontsource/${paket}/files/${dosya}`, `ortak/fonts/${dosya}`);
-      css += `@font-face { font-family: '${ad}'; font-style: normal; font-weight: ${agirlik}; font-display: swap; src: url(../fonts/${dosya}) format('woff2'); unicode-range: ${ARALIK[alt]}; }\n`;
+      css += `@font-face { font-family: '${ad}'; font-style: ${stil}; font-weight: ${agirlik}; font-display: swap; src: url(../fonts/${dosya}) format('woff2'); unicode-range: ${ARALIK[alt]}; }\n`;
     }
   }
 }
